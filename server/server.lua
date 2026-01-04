@@ -1,2519 +1,1115 @@
-local L0_1,L1_1,L2_1,L3_1,L4_1,L5_1,L6_1,L7_1,L8_1,L9_1,L10_1,L11_1,L12_1,L13_1,L14_1,L15_1,L16_1
-L0_1={}
-L1_1={}
-L2_1={}
-L3_1={}
-L4_1={}
-L5_1={}
-L6_1={}
-L7_1=4
-L8_1=GetPlayerIdentifierByType
-L9_1=GetPlayerPing
-L10_1=TriggerClientEvent
-function L11_1(A0_2,A1_2,...)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2
-L2_2=msgpack
-L2_2=L2_2.pack_args
-L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2=...
-L2_2=L2_2(L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2)
-L3_2=#L2_2
-L4_2=type
-L5_2=A1_2
-L4_2=L4_2(L5_2)
-if "table"==L4_2 then
-L4_2=1
-L5_2=#A1_2
-L6_2=1
-for L7_2=L4_2,L5_2,L6_2 do
-L8_2=TriggerClientEventInternal
-L9_2=A0_2
-L10_2=A1_2[L7_2]
-L11_2=L2_2
-L12_2=L3_2
-L8_2(L9_2,L10_2,L11_2,L12_2)
-end
-return
-end
-L4_2=TriggerClientEventInternal
-L5_2=A0_2
-L6_2=A1_2
-L7_2=L2_2
-L8_2=L3_2
-L4_2(L5_2,L6_2,L7_2,L8_2)
-end
-function L12_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2
-if nil==A0_2 then
-L2_2=0
-return L2_2
-end
-L2_2=L8_1
-if nil ~=L2_2 then
-L2_2=L8_1
-L3_2=A0_2
-L4_2=A1_2
-return L2_2(L3_2,L4_2)
-else
-L2_2=GetPlayerIdentifier
-L3_2=A0_2
-L4_2=1
-return L2_2(L3_2,L4_2)
-end
-end
-GetPlayerIdentifierByType=L12_1
-function L12_1(A0_2,...)
-local L1_2,L2_2,L3_2
-if nil ~=A0_2 then
-L1_2=L9_1
-L2_2=A0_2
-L3_2=...
-L1_2(L2_2,L3_2)
-end
-end
-GetPlayerPing=L12_1
-function L12_1(A0_2,A1_2,...)
-local L2_2,L3_2,L4_2,L5_2
-if nil ~=A1_2 then
-L2_2=L10_1
-L3_2=A0_2
-L4_2=A1_2
-L5_2=...
-L2_2(L3_2,L4_2,L5_2)
-end
-end
-TriggerClientEvent=L12_1
-function L12_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2
-L1_2=0
-L2_2=pairs
-L3_2=L0_1
-L2_2,L3_2,L4_2,L5_2=L2_2(L3_2)
-for L6_2,L7_2 in L2_2,L3_2,L4_2,L5_2 do
-L8_2=L7_2.host
-if L8_2==A0_2 then
-L1_2=L6_2
-end
-end
-if not L1_2 then
-return
-end
-L2_2=L0_1
-L2_2=L2_2[L1_2]
-L3_2={}
-L2_2.rewardsOptions=L3_2
-L2_2=L0_1
-L2_2=L2_2[L1_2]
-L2_2=L2_2.clients
-L2_2=#L2_2
-L2_2=L2_2+1
-L3_2=1
-L4_2=L2_2-1
-L5_2=1
-for L6_2=L3_2,L4_2,L5_2 do
-L7_2=L0_1
-L7_2=L7_2[L1_2]
-L7_2=L7_2.clients
-L7_2=L7_2[L6_2]
-if not L7_2 then
-return
-end
-L8_2=L0_1
-L8_2=L8_2[L1_2]
-L8_2=L8_2.rewardsOptions
-L9_2=math
-L9_2=L9_2.floor
-L10_2=100
-L10_2=L10_2/L2_2
-L9_2=L9_2(L10_2)
-L8_2[L7_2]=L9_2
-end
-L3_2=L0_1
-L3_2=L3_2[L1_2]
-L3_2=L3_2.rewardsOptions
-L4_2=math
-L4_2=L4_2.floor
-L5_2=100
-L5_2=L5_2/L2_2
-L4_2=L4_2(L5_2)
-L3_2[A0_2]=L4_2
-L3_2=TriggerForAllMembers
-L4_2=A0_2
-L5_2="17mov_Garbage:SetMyReward"
-L6_2=math
-L6_2=L6_2.floor
-L7_2=100
-L7_2=L7_2/L2_2
-L6_2,L7_2,L8_2,L9_2,L10_2=L6_2(L7_2)
-L3_2(L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2)
-L3_2=TriggerClientEvent
-L4_2="17mov_Garbage:UpdateHostPercentages"
-L5_2=A0_2
-L6_2=math
-L6_2=L6_2.floor
-L7_2=100
-L7_2=L7_2/L2_2
-L6_2,L7_2,L8_2,L9_2,L10_2=L6_2(L7_2)
-L3_2(L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2)
-end
-RecalculateRewards=L12_1
-L12_1=RegisterNetEvent
-L13_1="17mov_GarbageCollector:server:fixRotation"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2
-L1_2=NetworkGetEntityFromNetworkId
-L2_2=A0_2
-L1_2=L1_2(L2_2)
-L2_2=DoesEntityExist
-L3_2=L1_2
-L2_2=L2_2(L3_2)
-if L2_2 then
-L2_2=Entity
-L3_2=L1_2
-L2_2=L2_2(L3_2)
-L2_2=L2_2.state
-L2_2=L2_2.validPos
-if L2_2 then
-L2_2=TriggerClientEvent
-L3_2="17mov_GarbageCollector:client:fixRotation"
-L4_2=-1
-L5_2=A0_2
-L2_2(L3_2,L4_2,L5_2)
-end
-end
-end
-L12_1(L13_1,L14_1)
-L12_1=RegisterNetEvent
-L13_1="17mov_GarbageCollector:server:GarbageAnim"
-function L14_1(A0_2,A1_2,A2_2,A3_2,A4_2,A5_2)
-local L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2
-L6_2=source
-L7_2=L11_1
-L8_2="17mov_GarbageCollector:client:GarbageAnim"
-L9_2=A0_2
-L10_2=A1_2
-L11_2=A2_2
-L12_2=A3_2
-L13_2=L6_2
-L14_2=A4_2
-L15_2=A5_2
-L7_2(L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2)
-end
-L12_1(L13_1,L14_1)
-function L12_1(A0_2,A1_2,A2_2)
-local L3_2,L4_2,L5_2,L6_2,L7_2,L8_2
-L3_2=DoesEntityExist
-L4_2=A0_2
-L3_2=L3_2(L4_2)
-if not L3_2 then
-return
-end
-L3_2=Entity
-L4_2=A0_2
-L3_2=L3_2(L4_2)
-L3_2=L3_2.state
-L3_2=L3_2.queued_bags
-if not L3_2 then
-L3_2=0
-end
-if A1_2 then
-L3_2=L3_2+1
-L4_2=Entity
-L5_2=A0_2
-L4_2=L4_2(L5_2)
-L4_2=L4_2.state
-L5_2=L4_2
-L4_2=L4_2.set
-L6_2="queued_bags"
-L7_2=L3_2
-L8_2=true
-L4_2(L5_2,L6_2,L7_2,L8_2)
-end
-if 1==L3_2 or A2_2 and L3_2>0 then
-L4_2=Citizen
-L4_2=L4_2.SetTimeout
-L5_2=math
-L5_2=L5_2.random
-L6_2=Config
-L6_2=L6_2.BinsRestartingDelay
-L6_2=L6_2.min
-L7_2=Config
-L7_2=L7_2.BinsRestartingDelay
-L7_2=L7_2.max
-L5_2=L5_2(L6_2,L7_2)
-L5_2=L5_2*1000
-function L6_2()
-local L0_3,L1_3,L2_3,L3_3,L4_3,L5_3,L6_3,L7_3
-L0_3=DoesEntityExist
-L1_3=A0_2
-L0_3=L0_3(L1_3)
-if not L0_3 then
-return
-end
-L0_3=Entity
-L1_3=A0_2
-L0_3=L0_3(L1_3)
-L0_3=L0_3.state
-L0_3=L0_3.queued_bags
-if not L0_3 then
-L0_3=0
-end
-if 0==L0_3 then
-return
-end
-L1_3=Entity
-L2_3=A0_2
-L1_3=L1_3(L2_3)
-L1_3=L1_3.state
-L1_3=L1_3.currentStage
-if L1_3 then
-L2_3=Entity
-L3_3=A0_2
-L2_3=L2_3(L3_3)
-L2_3=L2_3.state
-L3_3=L2_3
-L2_3=L2_3.set
-L4_3="currentStage"
-L5_3=math
-L5_3=L5_3.max
-L6_3=L1_3-1
-L7_3=1
-L5_3=L5_3(L6_3,L7_3)
-L6_3=true
-L2_3(L3_3,L4_3,L5_3,L6_3)
-end
-L2_3=Entity
-L3_3=A0_2
-L2_3=L2_3(L3_3)
-L2_3=L2_3.state
-L3_3=L2_3
-L2_3=L2_3.set
-L4_3="queued_bags"
-L5_3=math
-L5_3=L5_3.max
-L6_3=L0_3-1
-L7_3=0
-L5_3=L5_3(L6_3,L7_3)
-L6_3=true
-L2_3(L3_3,L4_3,L5_3,L6_3)
-L2_3=RestartBagsQueue
-L3_3=A0_2
-L4_3=false
-L5_3=true
-L2_3(L3_3,L4_3,L5_3)
-end
-L4_2(L5_2,L6_2)
-end
-end
-RestartBagsQueue=L12_1
-L12_1=RegisterNetEvent
-L13_1="17mov_GarbageCollector:server:GarbageSetOcupied"
-function L14_1(A0_2,A1_2,A2_2,A3_2)
-local L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2
-L4_2=NetworkGetEntityFromNetworkId
-L5_2=A0_2
-L4_2=L4_2(L5_2)
-L5_2=DoesEntityExist
-L6_2=L4_2
-L5_2=L5_2(L6_2)
-if L5_2 then
-if A1_2 then
-L5_2=Entity
-L6_2=L4_2
-L5_2=L5_2(L6_2)
-L5_2=L5_2.state
-L5_2=L5_2.currentStage
-if not L5_2 then
-L5_2=1
-end
-L6_2=math
-L6_2=L6_2.min
-if A3_2 then
-L7_2=0
-if L7_2 then
-goto lbl_27
-end
-end
-L7_2=1
-::lbl_27::
-L7_2=L5_2+L7_2
-L8_2=A1_2
-L6_2=L6_2(L7_2,L8_2)
-L5_2=L6_2
-L6_2=Entity
-L7_2=L4_2
-L6_2=L6_2(L7_2)
-L6_2=L6_2.state
-L7_2=L6_2
-L6_2=L6_2.set
-L8_2="currentStage"
-L9_2=L5_2
-L10_2=true
-L6_2(L7_2,L8_2,L9_2,L10_2)
-L6_2=RestartBagsQueue
-L7_2=L4_2
-L8_2=true
-L9_2=false
-L6_2(L7_2,L8_2,L9_2)
-L6_2=Entity
-L7_2=L4_2
-L6_2=L6_2(L7_2)
-L6_2=L6_2.state
-L7_2=L6_2
-L6_2=L6_2.set
-L8_2="GarbageOccupied"
-L9_2=nil
-L10_2=true
-L6_2(L7_2,L8_2,L9_2,L10_2)
-else
-L5_2=Entity
-L6_2=L4_2
-L5_2=L5_2(L6_2)
-L5_2=L5_2.state
-L6_2=L5_2
-L5_2=L5_2.set
-L7_2="GarbageOccupied"
-L8_2=true
-L9_2=true
-L5_2(L6_2,L7_2,L8_2,L9_2)
-end
-if A2_2 then
-L5_2=Config
-L5_2=L5_2.FixBinsPosition
-if L5_2 then
-L5_2=Entity
-L6_2=L4_2
-L5_2=L5_2(L6_2)
-L5_2=L5_2.state
-L6_2=L5_2
-L5_2=L5_2.set
-L7_2="validPos"
-L8_2=json
-L8_2=L8_2.encode
-L9_2=A2_2
-L8_2=L8_2(L9_2)
-L9_2=true
-L5_2(L6_2,L7_2,L8_2,L9_2)
-end
-end
-end
-end
-L12_1(L13_1,L14_1)
-L12_1=RegisterNetEvent
-L13_1="17mov_GarbageCollector:server:BlockBags"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2
-L1_2=1
-L2_2=#A0_2
-L3_2=1
-for L4_2=L1_2,L2_2,L3_2 do
-L5_2=NetworkGetEntityFromNetworkId
-L6_2=A0_2[L4_2]
-L5_2=L5_2(L6_2)
-L6_2=DoesEntityExist
-L7_2=L5_2
-L6_2=L6_2(L7_2)
-if L6_2 then
-L6_2=Entity
-L7_2=L5_2
-L6_2=L6_2(L7_2)
-L6_2=L6_2.state
-L7_2=L6_2
-L6_2=L6_2.set
-L8_2="GarbageBlock"
-L9_2=true
-L10_2=true
-L6_2(L7_2,L8_2,L9_2,L10_2)
-end
-end
-end
-L12_1(L13_1,L14_1)
-L12_1=Functions
-L12_1=L12_1.RegisterServerCallback
-L13_1="17mov_GarbageCollector:server:GarbageGetOcupied"
-function L14_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2
-L2_2=NetworkGetEntityFromNetworkId
-L3_2=A1_2
-L2_2=L2_2(L3_2)
-L3_2=DoesEntityExist
-L4_2=L2_2
-L3_2=L3_2(L4_2)
-if not L3_2 then
-L3_2=false
-return L3_2
-end
-L3_2=Entity
-L4_2=L2_2
-L3_2=L3_2(L4_2)
-L3_2=L3_2.state
-L3_2=L3_2.GarbageOccupied
-if L3_2 then
-L4_2=true
-return L4_2
-end
-L4_2=Entity
-L5_2=L2_2
-L4_2=L4_2(L5_2)
-L4_2=L4_2.state
-L5_2=L4_2
-L4_2=L4_2.set
-L6_2="GarbageOccupied"
-L7_2=true
-L8_2=true
-L4_2(L5_2,L6_2,L7_2,L8_2)
-L4_2=false
-return L4_2
-end
-L12_1(L13_1,L14_1)
-L12_1=Functions
-L12_1=L12_1.RegisterServerCallback
-L13_1="17mov_Garbage:GetPlayersNames"
-function L14_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2
-L2_2={}
-L3_2=1
-L4_2=#A1_2
-L5_2=1
-for L6_2=L3_2,L4_2,L5_2 do
-L7_2=table
-L7_2=L7_2.insert
-L8_2=L2_2
-L9_2={}
-L10_2=A1_2[L6_2]
-L9_2.id=L10_2
-L10_2=GetPlayerIdentity
-L11_2=A1_2[L6_2]
-L10_2=L10_2(L11_2)
-L9_2.name=L10_2
-L7_2(L8_2,L9_2)
-end
-return L2_2
-end
-L12_1(L13_1,L14_1)
-L12_1=Functions
-L12_1=L12_1.RegisterServerCallback
-L13_1="17mov_Garbage:CheckThisReward"
-function L14_1(A0_2,A1_2,A2_2)
-local L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2
-L3_2=0
-L4_2=0
-L5_2=pairs
-L6_2=L0_1
-L5_2,L6_2,L7_2,L8_2=L5_2(L6_2)
-for L9_2,L10_2 in L5_2,L6_2,L7_2,L8_2 do
-L11_2=L10_2.host
-if A0_2==L11_2 then
-L3_2=L9_2
-break
-end
-L11_2=1
-L12_2=L10_2.clients
-L12_2=#L12_2
-L13_2=1
-for L14_2=L11_2,L12_2,L13_2 do
-L15_2=L10_2.clients
-L15_2=L15_2[L14_2]
-if A0_2==L15_2 then
-L3_2=L9_2
-break
-end
-end
-end
-L5_2=pairs
-L6_2=L0_1
-L6_2=L6_2[L3_2]
-L6_2=L6_2.rewardsOptions
-L5_2,L6_2,L7_2,L8_2=L5_2(L6_2)
-for L9_2,L10_2 in L5_2,L6_2,L7_2,L8_2 do
-if L9_2 ~=A2_2 then
-L4_2=L4_2+L10_2
-end
-end
-L5_2=L4_2+A1_2
-if L5_2>100 then
-L5_2=false
-return L5_2
-else
-L5_2=L0_1
-L5_2=L5_2[L3_2]
-L5_2=L5_2.rewardsOptions
-L5_2[A2_2]=A1_2
-L5_2=TriggerClientEvent
-L6_2="17mov_Garbage:SetMyReward"
-L7_2=A2_2
-L8_2=A1_2
-L5_2(L6_2,L7_2,L8_2)
-L5_2=true
-return L5_2
-end
-end
-L12_1(L13_1,L14_1)
-L12_1=Functions
-L12_1=L12_1.RegisterServerCallback
-L13_1="17mov_Garbage:IfPlayerOwnsTeam"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2
-L1_2=false
-L2_2=pairs
-L3_2=L0_1
-L2_2,L3_2,L4_2,L5_2=L2_2(L3_2)
-for L6_2,L7_2 in L2_2,L3_2,L4_2,L5_2 do
-L8_2=L7_2.host
-if L8_2==A0_2 then
-L1_2=true
-break
-end
-end
-return L1_2
-end
-L12_1(L13_1,L14_1)
-L12_1=Functions
-L12_1=L12_1.RegisterServerCallback
-L13_1="17mov_Garbage:IfPlayerIsHost"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2
-L1_2=true
-L2_2=0
-L3_2=pairs
-L4_2=L0_1
-L3_2,L4_2,L5_2,L6_2=L3_2(L4_2)
-for L7_2,L8_2 in L3_2,L4_2,L5_2,L6_2 do
-L9_2=1
-L10_2=L8_2.clients
-L10_2=#L10_2
-L11_2=1
-for L12_2=L9_2,L10_2,L11_2 do
-L13_2=L8_2.clients
-L13_2=L13_2[L12_2]
-if L13_2==A0_2 then
-L1_2=false
-L2_2=L7_2
-break
-end
-end
-end
-if not L1_2 then
-L3_2=L0_1
-L3_2=L3_2[L2_2]
-L3_2=L3_2.host
-if nil ~=L3_2 then
-L3_2=GetPlayerPing
-L4_2=L0_1
-L4_2=L4_2[L2_2]
-L4_2=L4_2.host
-L3_2=L3_2(L4_2)
-if 0 ~=L3_2 then
-goto lbl_41
-end
-end
-L1_2=true
-L3_2=L0_1
-L3_2=L3_2[L2_2]
-L3_2.host=A0_2
-end
-::lbl_41::
-return L1_2
-end
-L12_1(L13_1,L14_1)
-L12_1=Functions
-L12_1=L12_1.RegisterServerCallback
-L13_1="17mov_Garbage:init"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2
-L1_2={}
-L2_2=GetPlayerIdentity
-L3_2=A0_2
-L2_2=L2_2(L3_2)
-L1_2.name=L2_2
-L1_2.source=A0_2
-return L1_2
-end
-L12_1(L13_1,L14_1)
-L12_1=Functions
-L12_1=L12_1.RegisterServerCallback
-L13_1="17mov_Garbage:GetLobbyMembers"
-function L14_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2
-if nil==A1_2 then
-L2_2={}
-return L2_2
-end
-L2_2={}
-L3_2=A1_2
-L2_2[1]=L3_2
-L3_2=pairs
-L4_2=L0_1
-L3_2,L4_2,L5_2,L6_2=L3_2(L4_2)
-for L7_2,L8_2 in L3_2,L4_2,L5_2,L6_2 do
-L9_2=L8_2.host
-if L9_2==A1_2 then
-L9_2=1
-L10_2=L8_2.clients
-L10_2=#L10_2
-L11_2=1
-for L12_2=L9_2,L10_2,L11_2 do
-L13_2=table
-L13_2=L13_2.insert
-L14_2=L2_2
-L15_2=L8_2.clients
-L15_2=L15_2[L12_2]
-L13_2(L14_2,L15_2)
-end
-end
-end
-return L2_2
-end
-L12_1(L13_1,L14_1)
-L12_1=RegisterNetEvent
-L13_1="17mov_Garbage:SendRequestToClient_sv"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2
-L1_2=source
-L2_2=pairs
-L3_2=L0_1
-L2_2,L3_2,L4_2,L5_2=L2_2(L3_2)
-for L6_2,L7_2 in L2_2,L3_2,L4_2,L5_2 do
-L8_2=L7_2.host
-if L8_2==A0_2 then
-L8_2=Notify
-L9_2=L1_2
-L10_2=_L
-L11_2="Lobby.Player.AlreadyHost"
-L10_2,L11_2,L12_2,L13_2,L14_2,L15_2=L10_2(L11_2)
-return L8_2(L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2)
-else
-L8_2=1
-L9_2=L7_2.clients
-L9_2=#L9_2
-L10_2=1
-for L11_2=L8_2,L9_2,L10_2 do
-L12_2=L7_2.clients
-L12_2=L12_2[L11_2]
-if L12_2==A0_2 then
-L12_2=Notify
-L13_2=L1_2
-L14_2=_L
-L15_2="Lobby.Player.AlreadyInTeam"
-L14_2,L15_2=L14_2(L15_2)
-return L12_2(L13_2,L14_2,L15_2)
-end
-end
-end
-end
-L2_2=pairs
-L3_2=L1_1
-L2_2,L3_2,L4_2,L5_2=L2_2(L3_2)
-for L6_2,L7_2 in L2_2,L3_2,L4_2,L5_2 do
-L8_2=L7_2.client
-if L8_2==A0_2 then
-L8_2=Notify
-L9_2=L1_2
-L10_2=_L
-L11_2="Lobby.Player.AlreadyGotInvite"
-L10_2,L11_2,L12_2,L13_2,L14_2,L15_2=L10_2(L11_2)
-return L8_2(L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2)
-else
-L8_2=L7_2.host
-if L8_2==L1_2 then
-L8_2=L7_2.client
-if nil ~=L8_2 then
-L8_2=Notify
-L9_2=L1_2
-L10_2=_L
-L11_2="Lobby.Player.AlreadyInvited"
-L10_2,L11_2,L12_2,L13_2,L14_2,L15_2=L10_2(L11_2)
-return L8_2(L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2)
-end
-end
-end
-end
-L2_2={}
-L3_2=pairs
-L4_2=L0_1
-L3_2,L4_2,L5_2,L6_2=L3_2(L4_2)
-for L7_2,L8_2 in L3_2,L4_2,L5_2,L6_2 do
-L9_2=L8_2.host
-if L9_2==L1_2 then
-L2_2=L8_2.clients
-end
-end
-L3_2=#L2_2
-L3_2=L3_2+1
-L4_2=L7_1
-if L3_2>=L4_2 then
-L3_2=Notify
-L4_2=L1_2
-L5_2=_L
-L6_2="Lobby.StartJob.PartyFull"
-L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2=L5_2(L6_2)
-return L3_2(L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2)
-end
-L3_2=table
-L3_2=L3_2.insert
-L4_2=L1_1
-L5_2={}
-L5_2.host=L1_2
-L5_2.client=A0_2
-L3_2(L4_2,L5_2)
-L3_2=Notify
-L4_2=L1_2
-L5_2=_L
-L6_2="Lobby.StartJob.InviteSent"
-L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2=L5_2(L6_2)
-L3_2(L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2)
-L3_2=TriggerClientEvent
-L4_2="17mov_Garbage:SendRequestToClient_cl"
-L5_2=A0_2
-L6_2=GetPlayerIdentity
-L7_2=L1_2
-L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2=L6_2(L7_2)
-L3_2(L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2)
-end
-L12_1(L13_1,L14_1)
-L12_1=RegisterNetEvent
-L13_1="17mov_Garbage:UpdateServerPartyBagsCounter"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2
-L1_2=source
-L2_2=L2_1
-L2_2=L2_2[L1_2]
-if nil==L2_2 then
-return
-end
-L2_2=L5_1
-L2_2=L2_2[L1_2]
-if nil ~=L2_2 then
-L2_2=os
-L2_2=L2_2.time
-L2_2=L2_2()
-L3_2=L5_1
-L3_2=L3_2[L1_2]
-L2_2=L2_2-L3_2
-if L2_2<2 then
-return
-end
-end
-L2_2=Config
-L2_2=L2_2.BagAttachments
-L2_2=L2_2[A0_2]
-L2_2=L2_2.counterValue
-if not L2_2 then
-L2_2=1
-end
-L3_2=L5_1
-L4_2=os
-L4_2=L4_2.time
-L4_2=L4_2()
-L3_2[L1_2]=L4_2
-if nil==L2_2 then
-L2_2=1
-end
-if L2_2>=100 then
-return
-end
-L3_2=0
-L4_2=pairs
-L5_2=L0_1
-L4_2,L5_2,L6_2,L7_2=L4_2(L5_2)
-for L8_2,L9_2 in L4_2,L5_2,L6_2,L7_2 do
-L10_2=L9_2.host
-if L10_2==L1_2 then
-L3_2=L8_2
-break
-else
-L10_2=1
-L11_2=L9_2.clients
-L11_2=#L11_2
-L12_2=1
-for L13_2=L10_2,L11_2,L12_2 do
-L14_2=L9_2.clients
-L14_2=L14_2[L13_2]
-if L1_2==L14_2 then
-L3_2=L8_2
-break
-end
-end
-end
-end
-L4_2=NetworkGetEntityFromNetworkId
-L5_2=L0_1
-L5_2=L5_2[L3_2]
-L5_2=L5_2.vehNetId
-L4_2=L4_2(L5_2)
-L5_2=GetEntityCoords
-L6_2=GetPlayerPed
-L7_2=L1_2
-L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2=L6_2(L7_2)
-L5_2=L5_2(L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2)
-L6_2=GetEntityCoords
-L7_2=L4_2
-L6_2=L6_2(L7_2)
-L6_2=L6_2-L5_2
-L6_2=#L6_2
-if L6_2>10.0 then
-return
-end
-L6_2=L2_1
-L6_2[L1_2]=nil
-L6_2=nil
-L7_2=false
-L8_2=0
-L9_2=pairs
-L10_2=L0_1
-L9_2,L10_2,L11_2,L12_2=L9_2(L10_2)
-for L13_2,L14_2 in L9_2,L10_2,L11_2,L12_2 do
-L15_2=L14_2.host
-if L15_2==L1_2 then
-L7_2=true
-L6_2=L14_2.host
-else
-L15_2=1
-L16_2=L14_2.clients
-L16_2=#L16_2
-L17_2=1
-for L18_2=L15_2,L16_2,L17_2 do
-L19_2=L14_2.clients
-L19_2=L19_2[L18_2]
-if L1_2==L19_2 then
-L7_2=true
-L6_2=L14_2.host
-end
-end
-end
-if L7_2 then
-L15_2=L14_2.bags
-if nil ~=L15_2 then
-L15_2=L14_2.bags
-if L15_2<100 then
-L15_2=L14_2.bags
-L15_2=L15_2+L2_2
-L14_2.bags=L15_2
-end
-L8_2=L14_2.bags
-break
-end
-end
-end
-L9_2=TriggerForAllMembers
-L10_2=L6_2
-L11_2="17mov_Garbage:UpdateBagsCounter"
-L12_2=L8_2
-L9_2(L10_2,L11_2,L12_2)
-end
-L12_1(L13_1,L14_1)
-L12_1=RegisterNetEvent
-L13_1="17mov_Garbage:ClientReactRequest"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2
-L1_2=source
-L2_2=nil
-L3_2=false
-L4_2=pairs
-L5_2=L1_1
-L4_2,L5_2,L6_2,L7_2=L4_2(L5_2)
-for L8_2,L9_2 in L4_2,L5_2,L6_2,L7_2 do
-L10_2=L9_2.client
-if L10_2==L1_2 then
-L2_2=L9_2.host
-L10_2=L1_1
-L10_2[L8_2]=nil
-break
-end
-end
-if A0_2 then
-if nil ~=L2_2 and nil ~=L1_2 then
-L4_2=pairs
-L5_2=L0_1
-L4_2,L5_2,L6_2,L7_2=L4_2(L5_2)
-for L8_2,L9_2 in L4_2,L5_2,L6_2,L7_2 do
-L10_2=L9_2.host
-if L10_2==L2_2 then
-L10_2=L9_2.clients
-if nil ~=L10_2 then
-L10_2=table
-L10_2=L10_2.insert
-L11_2=L9_2.clients
-L12_2=L1_2
-L10_2(L11_2,L12_2)
-L3_2=true
-end
-end
-end
-if not L3_2 then
-L4_2=table
-L4_2=L4_2.insert
-L5_2=L0_1
-L6_2={}
-L6_2.host=L2_2
-L7_2={}
-L8_2=L1_2
-L7_2[1]=L8_2
-L6_2.clients=L7_2
-L6_2.bags=0
-L4_2(L5_2,L6_2)
-end
-L4_2=Config
-L4_2=L4_2.UseModernUI
-if L4_2 then
-L4_2=RecalculateRewards
-L5_2=L2_2
-L4_2(L5_2)
-end
-L4_2=Notify
-L5_2=L2_2
-L6_2=_L
-L7_2="Lobby.Player.Accepted"
-L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2=L6_2(L7_2)
-L4_2(L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2)
-L4_2=GetAllPartyMugs
-L5_2=L2_2
-L4_2=L4_2(L5_2)
-L5_2=TriggerForAllMembers
-L6_2=L2_2
-L7_2="17mov_Garbage:RefreshMugs"
-L8_2=L4_2
-L5_2(L6_2,L7_2,L8_2)
-else
-L4_2=Notify
-L5_2=L1_2
-L6_2=_L
-L7_2="Lobby.Player.InviteError"
-L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2=L6_2(L7_2)
-L4_2(L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2)
-L4_2=Notify
-L5_2=L2_2
-L6_2=_L
-L7_2="Lobby.Player.InviteError"
-L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2=L6_2(L7_2)
-L4_2(L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2)
-end
-else
-L4_2=Notify
-L5_2=L2_2
-L6_2=_L
-L7_2="Lobby.Player.Declined"
-L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2=L6_2(L7_2)
-L4_2(L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2)
-end
-end
-L12_1(L13_1,L14_1)
-L12_1=RegisterNetEvent
-L13_1="17mov_Garbage:KickPlayerFromLobby"
-function L14_1(A0_2,A1_2,A2_2)
-local L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2
-L3_2=source
-L4_2=A0_2
-if nil==A2_2 then
-L5_2=pairs
-L6_2=L0_1
-L5_2,L6_2,L7_2,L8_2=L5_2(L6_2)
-for L9_2,L10_2 in L5_2,L6_2,L7_2,L8_2 do
-L11_2=1
-L12_2=L10_2.clients
-L12_2=#L12_2
-L13_2=1
-for L14_2=L11_2,L12_2,L13_2 do
-L15_2=L10_2.host
-if L15_2==L3_2 then
-L15_2=L10_2.clients
-L15_2=L15_2[L14_2]
-if L15_2==L4_2 then
-L15_2=L10_2.clients
-L15_2[L14_2]=nil
-break
-end
-end
-end
-end
-else
-L5_2=pairs
-L6_2=L0_1
-L5_2,L6_2,L7_2,L8_2=L5_2(L6_2)
-for L9_2,L10_2 in L5_2,L6_2,L7_2,L8_2 do
-L11_2=1
-L12_2=L10_2.clients
-L12_2=#L12_2
-L13_2=1
-for L14_2=L11_2,L12_2,L13_2 do
-L15_2=L10_2.clients
-L15_2=L15_2[L14_2]
-if L15_2==A2_2 then
-L3_2=L10_2.host
-L15_2=L10_2.clients
-L15_2[L14_2]=nil
-break
-end
-end
-end
-end
-if A1_2 then
-L5_2=Notify
-L6_2=L4_2
-L7_2=_L
-L8_2="Lobby.Player.Kicked"
-L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2=L7_2(L8_2)
-L5_2(L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2)
-end
-L5_2=Config
-L5_2=L5_2.UseModernUI
-if L5_2 then
-L5_2={}
-L6_2={}
-L6_2.id=L4_2
-L7_2=GetPlayerIdentity
-L8_2=L4_2
-L7_2=L7_2(L8_2)
-L6_2.name=L7_2
-L6_2.isHost=true
-L5_2[1]=L6_2
-L6_2=TriggerClientEvent
-L7_2="17mov_Garbage:RefreshMugs"
-L8_2=L4_2
-L9_2=L5_2
-L10_2=L4_2
-L6_2(L7_2,L8_2,L9_2,L10_2)
-L6_2=TriggerClientEvent
-L7_2="17mov_Garbage:clearMyLobby"
-L8_2=L4_2
-L6_2(L7_2,L8_2)
-L6_2=TriggerClientEvent
-L7_2="17mov_Garbage:SetMyReward"
-L8_2=L4_2
-L9_2=100
-L6_2(L7_2,L8_2,L9_2)
-L6_2=GetAllPartyMugs
-L7_2=L3_2
-L6_2=L6_2(L7_2)
-L7_2=TriggerForAllMembers
-L8_2=L3_2
-L9_2="17mov_Garbage:RefreshMugs"
-L10_2=L6_2
-L7_2(L8_2,L9_2,L10_2)
-L7_2=RecalculateRewards
-L8_2=L3_2
-L7_2(L8_2)
-L7_2=pairs
-L8_2=L0_1
-L7_2,L8_2,L9_2,L10_2=L7_2(L8_2)
-for L11_2,L12_2 in L7_2,L8_2,L9_2,L10_2 do
-L13_2=L12_2.clients
-L13_2=#L13_2
-if 0==L13_2 then
-L13_2=L12_2.host
-if L13_2==L3_2 then
-L13_2=L0_1
-L13_2[L11_2]=nil
-L13_2=TriggerClientEvent
-L14_2="17mov_Garbage:clearMyLobby"
-L15_2=L3_2
-L13_2(L14_2,L15_2)
-end
-end
-end
-else
-L5_2={}
-L6_2={}
-L6_2.id=L4_2
-L7_2=GetPlayerIdentity
-L8_2=L4_2
-L7_2=L7_2(L8_2)
-L6_2.name=L7_2
-L6_2.isHost=true
-L5_2[1]=L6_2
-L6_2=TriggerClientEvent
-L7_2="17mov_Garbage:RefreshMugs"
-L8_2=L4_2
-L9_2=L5_2
-L10_2=L4_2
-L6_2(L7_2,L8_2,L9_2,L10_2)
-L6_2=GetAllPartyMugs
-L7_2=L3_2
-L6_2=L6_2(L7_2)
-L7_2=TriggerForAllMembers
-L8_2=L3_2
-L9_2="17mov_Garbage:RefreshMugs"
-L10_2=L6_2
-L7_2(L8_2,L9_2,L10_2)
-L7_2=pairs
-L8_2=L0_1
-L7_2,L8_2,L9_2,L10_2=L7_2(L8_2)
-for L11_2,L12_2 in L7_2,L8_2,L9_2,L10_2 do
-L13_2=L12_2.clients
-L13_2=#L13_2
-if 0==L13_2 then
-L13_2=L12_2.host
-if L13_2==L3_2 then
-L13_2=L0_1
-L13_2[L11_2]=nil
-end
-end
-end
-end
-end
-L12_1(L13_1,L14_1)
-L12_1=RegisterNetEvent
-L13_1="17mov_GarbageJob:SendVehicleNetId"
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2
-L1_2=source
-L2_2=pairs
-L3_2=L0_1
-L2_2,L3_2,L4_2,L5_2=L2_2(L3_2)
-for L6_2,L7_2 in L2_2,L3_2,L4_2,L5_2 do
-L8_2=L7_2.host
-if L8_2==L1_2 then
-L7_2.vehNetId=A0_2
-end
-end
-end
-L12_1(L13_1,L14_1)
-L12_1={}
-L13_1=RegisterNetEvent
-L14_1="17mov_Garbage:server:endStage"
-function L15_1()
-local L0_2,L1_2,L2_2,L3_2,L4_2
-L0_2=source
-L1_2=tostring
-L2_2=L0_2
-L1_2=L1_2(L2_2)
-L2_2=L12_1
-L2_2[L1_2]=true
-L1_2=TriggerForAllMembers
-L2_2=L0_2
-L3_2="17mov_Garbage:client:endStage"
-L4_2=L0_2
-L1_2(L2_2,L3_2,L4_2)
-end
-L13_1(L14_1,L15_1)
-L13_1=RegisterNetEvent
-L14_1="17mov_GarbageCollector:server:startUnloadAnim"
-function L15_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2
-L2_2=source
-L3_2=pairs
-L4_2=L0_1
-L3_2,L4_2,L5_2,L6_2=L3_2(L4_2)
-for L7_2,L8_2 in L3_2,L4_2,L5_2,L6_2 do
-L9_2=L8_2.host
-if L9_2==L2_2 then
-L9_2=TriggerClientEvent
-L10_2="17mov_GarbageCollector:client:startUnloadAnim"
-L11_2=L2_2
-L12_2=A0_2
-L13_2=true
-L9_2(L10_2,L11_2,L12_2,L13_2)
-L9_2=L11_1
-L10_2="17mov_GarbageCollector:client:startUnloadAnim"
-L11_2=A1_2
-L12_2=A0_2
-L13_2=false
-return L9_2(L10_2,L11_2,L12_2,L13_2)
-end
-end
-end
-L13_1(L14_1,L15_1)
-L13_1=RegisterNetEvent
-L14_1="17mov_Garbage:endJob_sv"
-function L15_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2,L22_2
-L2_2=source
-L3_2=nil
-L4_2=TriggerForAllMembers
-L5_2=L2_2
-L6_2="17mov_Garbage:endJob_cl"
-L7_2=0
-L4_2(L5_2,L6_2,L7_2)
-L4_2=pairs
-L5_2=L0_1
-L4_2,L5_2,L6_2,L7_2=L4_2(L5_2)
-for L8_2,L9_2 in L4_2,L5_2,L6_2,L7_2 do
-L10_2=L9_2.host
-if L10_2==L2_2 then
-L9_2.working=false
-L3_2=L9_2.bags
-L9_2.bags=0
-L10_2={}
-L11_2=1
-L12_2=L9_2.clients
-L12_2=#L12_2
-L13_2=1
-for L14_2=L11_2,L12_2,L13_2 do
-L15_2=table
-L15_2=L15_2.insert
-L16_2=L10_2
-L17_2=L9_2.clients
-L17_2=L17_2[L14_2]
-L15_2(L16_2,L17_2)
-end
-L11_2=table
-L11_2=L11_2.insert
-L12_2=L10_2
-L13_2=L9_2.host
-L11_2(L12_2,L13_2)
-L11_2=Citizen
-L11_2=L11_2.CreateThread
-function L12_2()
-local L0_3,L1_3,L2_3,L3_3,L4_3,L5_3,L6_3,L7_3,L8_3
-L0_3=NetworkGetEntityFromNetworkId
-L1_3=L9_2.vehNetId
-L0_3=L0_3(L1_3)
-L1_3=DoesEntityExist
-L2_3=L0_3
-L1_3=L1_3(L2_3)
-if L1_3 then
-L1_3=A0_2
-if not L1_3 then
-L1_3=A0_2
-if L1_3 then
-goto lbl_52
-end
-L1_3=Config
-L1_3=L1_3.DeleteVehicleWithPenalty
-if not L1_3 then
-goto lbl_52
-end
-end
-L1_3=A1_2
-if not L1_3 then
-L1_3=A0_2
-if not L1_3 then
-L1_3=GetVehiclePedIsIn
-L2_3=GetPlayerPed
-L3_3=L2_2
-L2_3=L2_3(L3_3)
-L3_3=false
-L1_3=L1_3(L2_3,L3_3)
-L0_3=L1_3
-end
-L1_3=1
-L2_3=L10_2
-L2_3=#L2_3
-L3_3=1
-for L4_3=L1_3,L2_3,L3_3 do
-L5_3=TaskLeaveVehicle
-L6_3=GetPlayerPed
-L7_3=L10_2
-L7_3=L7_3[L4_3]
-L6_3=L6_3(L7_3)
-L7_3=L0_3
-L8_3=0
-L5_3(L6_3,L7_3,L8_3)
-end
-L1_3=Wait
-L2_3=1750
-L1_3(L2_3)
-L1_3=DeleteEntity
-L2_3=L0_3
-L1_3(L2_3)
-end
-end
-::lbl_52::
-end
-L11_2(L12_2)
-L11_2=Config
-L11_2=L11_2.Price
-L11_2=L3_2*L11_2
-L12_2=Config
-L12_2=L12_2.MultiplyRewardWhileWorkingInGroup
-if L12_2 then
-L12_2=math
-L12_2=L12_2.floor
-L13_2=L9_2.clients
-L13_2=#L13_2
-L13_2=L13_2+1
-L13_2=L11_2*L13_2
-L12_2=L12_2(L13_2)
-L11_2=L12_2
-end
-L12_2=Config
-L12_2=L12_2.UseModernUI
-if L12_2 then
-L12_2=L9_2.clients
-L12_2=#L12_2
-if 0==L12_2 then
-L12_2=RecalculateRewards
-L13_2=L2_2
-L12_2(L13_2)
-end
-end
-L12_2={}
-L13_2=1
-L14_2=#L10_2
-L15_2=1
-for L16_2=L13_2,L14_2,L15_2 do
-L17_2=0
-L18_2=Config
-L18_2=L18_2.UseModernUI
-if L18_2 then
-L18_2=Config
-L18_2=L18_2.LetBossSplitReward
-if L18_2 then
-L18_2=math
-L18_2=L18_2.floor
-L19_2=L9_2.rewardsOptions
-L20_2=L10_2[L16_2]
-L19_2=L19_2[L20_2]
-L19_2=L19_2/100
-L19_2=L11_2*L19_2
-L18_2=L18_2(L19_2)
-L17_2=L18_2
-end
-else
-L18_2=Config
-L18_2=L18_2.UseModernUI
-if not L18_2 then
-L18_2=Config
-L18_2=L18_2.SplitReward
-if L18_2 then
-L18_2=math
-L18_2=L18_2.floor
-L19_2=L9_2.clients
-L19_2=#L19_2
-L19_2=L19_2+1
-L19_2=L11_2/L19_2
-L18_2=L18_2(L19_2)
-L17_2=L18_2
-end
-else
-L17_2=L11_2
-end
-end
-if not A0_2 then
-L18_2=PayPenalty
-L19_2=L10_2[L16_2]
-L20_2=Config
-L20_2=L20_2.PenaltyAmount
-L18_2(L19_2,L20_2)
-L18_2=Notify
-L19_2=L10_2[L16_2]
-L20_2=_L
-L21_2="Job.Gameplay.RewardPenalty"
-L22_2=Config
-L22_2=L22_2.PenaltyAmount
-L20_2,L21_2,L22_2=L20_2(L21_2,L22_2)
-L18_2(L19_2,L20_2,L21_2,L22_2)
-end
-if not A0_2 then
-if A0_2 then
-goto lbl_159
-end
-L18_2=Config
-L18_2=L18_2.DontPayRewardWithoutVehicle
-if false ~=L18_2 then
-goto lbl_159
-end
-end
-L18_2=L10_2[L16_2]
-L18_2=L12_2[L18_2]
-if not L18_2 then
-L18_2=L10_2[L16_2]
-L12_2[L18_2]=true
-L18_2=Pay
-L19_2=L10_2[L16_2]
-L20_2=L17_2
-L21_2=#L10_2
-L22_2=L3_2
-L18_2(L19_2,L20_2,L21_2,L22_2)
-L18_2=Notify
-L19_2=L10_2[L16_2]
-L20_2=_L
-L21_2="Job.Gameplay.Reward"
-L22_2=L17_2
-L20_2,L21_2,L22_2=L20_2(L21_2,L22_2)
-L18_2(L19_2,L20_2,L21_2,L22_2)
-end
-::lbl_159::
-end
-L13_2=L9_2.clients
-L13_2=#L13_2
-if 0==L13_2 then
-L13_2=L0_1
-L13_2[L8_2]=nil
-L13_2=TriggerClientEvent
-L14_2="17mov_Garbage:clearMyLobby"
-L15_2=L2_2
-L13_2(L14_2,L15_2)
-end
-end
-end
-L4_2=tostring
-L5_2=L2_2
-L4_2=L4_2(L5_2)
-L5_2=L12_1
-L4_2=L5_2[L4_2]
-if L4_2 then
-L4_2=tostring
-L5_2=L2_2
-L4_2=L4_2(L5_2)
-L5_2=L12_1
-L5_2[L4_2]=nil
-end
-end
-L13_1(L14_1,L15_1)
-L13_1=RegisterNetEvent
-L14_1="17mov_Garbage:StartJob_sv"
-function L15_1()
-local L0_2,L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2
-L0_2=source
-L1_2=nil
-L2_2=nil
-L3_2=pairs
-L4_2=L0_1
-L3_2,L4_2,L5_2,L6_2=L3_2(L4_2)
-for L7_2,L8_2 in L3_2,L4_2,L5_2,L6_2 do
-L9_2=L8_2.host
-if L9_2==L0_2 then
-L1_2=L8_2.clients
-L2_2=L7_2
-break
-end
-end
-L3_2=Config
-L3_2=L3_2.RequireJobAlsoForFriends
-if L3_2 then
-L3_2=Config
-L3_2=L3_2.RequiredJob
-if "none" ~=L3_2 and nil ~=L1_2 then
-L3_2=1
-L4_2=#L1_2
-L5_2=1
-for L6_2=L3_2,L4_2,L5_2 do
-L7_2=GetPlayerJob
-L8_2=L1_2[L6_2]
-L7_2=L7_2(L8_2)
-L8_2=Config
-L8_2=L8_2.RequiredJob
-if L7_2 ~=L8_2 then
-L7_2=Notify
-L8_2=L0_2
-L9_2=_L
-L10_2="Lobby.StartJob.NoRequiredJob"
-L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2=L9_2(L10_2)
-return L7_2(L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2)
-end
-end
-end
-end
-L3_2=IsHaveRequiredItem
-L4_2=L0_2
-L3_2=L3_2(L4_2)
-if not L3_2 then
-L3_2=Notify
-L4_2=L0_2
-L5_2=_L
-L6_2="Lobby.StartJob.NoItem"
-L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2=L5_2(L6_2)
-return L3_2(L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2)
-end
-L3_2=Config
-L3_2=L3_2.RequireItemFromWholeTeam
-if L3_2 and nil ~=L1_2 then
-L3_2=1
-L4_2=#L1_2
-L5_2=1
-for L6_2=L3_2,L4_2,L5_2 do
-L7_2=IsHaveRequiredItem
-L8_2=L1_2[L6_2]
-L7_2=L7_2(L8_2)
-if not L7_2 then
-L7_2=Notify
-L8_2=L0_2
-L9_2=_L
-L10_2="Lobby.StartJob.NoItem"
-L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2=L9_2(L10_2)
-return L7_2(L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2)
-end
-end
-end
-L3_2=Config
-L3_2=L3_2.JobCooldown
-if L3_2>0 then
-L3_2=CooldownsTime
-if not L3_2 then
-L3_2={}
-end
-CooldownsTime=L3_2
-L3_2=os
-L3_2=L3_2.time
-L3_2=L3_2()
-L4_2=GetPlayerIdentifierByType
-L5_2=L0_2
-L6_2="license"
-L4_2=L4_2(L5_2,L6_2)
-L5_2=L6_1
-L5_2=L5_2[L4_2]
-if L5_2 then
-L5_2=CooldownsTime
-L5_2=L5_2[L4_2]
-L5_2=L3_2-L5_2
-L6_2=Config
-L6_2=L6_2.JobCooldown
-if L5_2>=L6_2 then
-L6_2=L6_1
-L6_2[L4_2]=nil
-L6_2=CooldownsTime
-L6_2[L4_2]=nil
-else
-L6_2=Config
-L6_2=L6_2.JobCooldown
-L6_2=L6_2-L5_2
-L7_2=math
-L7_2=L7_2.floor
-L8_2=L6_2/3600
-L7_2=L7_2(L8_2)
-L8_2=math
-L8_2=L8_2.floor
-L9_2=L6_2%3600
-L9_2=L9_2/60
-L8_2=L8_2(L9_2)
-L9_2=L6_2%60
-L10_2=""
-if L7_2>0 then
-L11_2=L10_2
-L12_2=L7_2
-L13_2=_L
-L14_2="Job.Time.Hours"
-L13_2=L13_2(L14_2)
-L14_2=" "
-L11_2=L11_2 .. L12_2 .. L13_2 .. L14_2
-L10_2=L11_2
-end
-if L8_2>0 then
-L11_2=L10_2
-L12_2=L8_2
-L13_2=_L
-L14_2="Job.Time.Minutes"
-L13_2=L13_2(L14_2)
-L14_2=" "
-L11_2=L11_2 .. L12_2 .. L13_2 .. L14_2
-L10_2=L11_2
-end
-L11_2=L10_2
-L12_2=L9_2
-L13_2=_L
-L14_2="Job.Time.Seconds"
-L13_2=L13_2(L14_2)
-L11_2=L11_2 .. L12_2 .. L13_2
-L10_2=L11_2
-L11_2=Notify
-L12_2=L0_2
-L13_2=_L
-L14_2="Lobby.StartJob.Cooldown"
-L15_2=GetPlayerIdentity
-L16_2=L0_2
-L15_2=L15_2(L16_2)
-L16_2=L10_2
-L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2=L13_2(L14_2,L15_2,L16_2)
-return L11_2(L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2)
-end
-end
-if nil ~=L1_2 then
-L5_2=1
-L6_2=#L1_2
-L7_2=1
-for L8_2=L5_2,L6_2,L7_2 do
-L9_2=GetPlayerIdentifierByType
-L10_2=L1_2[L8_2]
-L11_2="license"
-L9_2=L9_2(L10_2,L11_2)
-L10_2=L6_1
-L10_2=L10_2[L9_2]
-if L10_2 then
-L10_2=CooldownsTime
-L10_2=L10_2[L9_2]
-L10_2=L3_2-L10_2
-L11_2=Config
-L11_2=L11_2.JobCooldown
-if L10_2>=L11_2 then
-L11_2=L6_1
-L11_2[L9_2]=nil
-L11_2=CooldownsTime
-L11_2[L9_2]=nil
-else
-L11_2=Config
-L11_2=L11_2.JobCooldown
-L11_2=L11_2-L10_2
-L12_2=math
-L12_2=L12_2.floor
-L13_2=L11_2/3600
-L12_2=L12_2(L13_2)
-L13_2=math
-L13_2=L13_2.floor
-L14_2=L11_2%3600
-L14_2=L14_2/60
-L13_2=L13_2(L14_2)
-L14_2=L11_2%60
-L15_2=""
-if L12_2>0 then
-L16_2=L15_2
-L17_2=L12_2
-L18_2=_L
-L19_2="Job.Time.Hours"
-L18_2=L18_2(L19_2)
-L19_2=" "
-L16_2=L16_2 .. L17_2 .. L18_2 .. L19_2
-L15_2=L16_2
-end
-if L13_2>0 then
-L16_2=L15_2
-L17_2=L13_2
-L18_2=_L
-L19_2="Job.Time.Minutes"
-L18_2=L18_2(L19_2)
-L19_2=" "
-L16_2=L16_2 .. L17_2 .. L18_2 .. L19_2
-L15_2=L16_2
-end
-L16_2=L15_2
-L17_2=L14_2
-L18_2=_L
-L19_2="Job.Time.Seconds"
-L18_2=L18_2(L19_2)
-L16_2=L16_2 .. L17_2 .. L18_2
-L15_2=L16_2
-L16_2=Notify
-L17_2=L0_2
-L18_2=_L
-L19_2="Lobby.StartJob.Cooldown"
-L20_2=GetPlayerIdentity
-L21_2=L1_2[L8_2]
-L20_2=L20_2(L21_2)
-L21_2=L15_2
-L18_2,L19_2,L20_2,L21_2=L18_2(L19_2,L20_2,L21_2)
-return L16_2(L17_2,L18_2,L19_2,L20_2,L21_2)
-end
-end
-end
-end
-L5_2=L6_1
-L5_2[L4_2]=true
-L5_2=CooldownsTime
-L5_2[L4_2]=L3_2
-if nil ~=L1_2 then
-L5_2=1
-L6_2=#L1_2
-L7_2=1
-for L8_2=L5_2,L6_2,L7_2 do
-L9_2=GetPlayerIdentifierByType
-L10_2=L1_2[L8_2]
-L11_2="license"
-L9_2=L9_2(L10_2,L11_2)
-L10_2=L6_1
-L10_2[L9_2]=true
-L10_2=CooldownsTime
-L10_2[L9_2]=L3_2
-end
-end
-end
-L3_2=Config
-L3_2=L3_2.RequireOneFriendMinimum
-if L3_2 then
-if nil ~=L1_2 then
-L3_2=#L1_2
-if L3_2>0 then
-if nil ~=L2_2 then
-L3_2=L0_1
-L3_2=L3_2[L2_2]
-L3_2.working=true
-L3_2=Config
-L3_2=L3_2.Debug
-L3_2=L3_2.enabled
-if L3_2 then
-L3_2=Citizen
-L3_2=L3_2.CreateThread
-function L4_2()
-local L0_3,L1_3,L2_3,L3_3
-L1_3=L2_2
-L0_3=L0_1
-L0_3=L0_3[L1_3]
-L1_3=Config
-L1_3=L1_3.Debug
-L1_3=L1_3.base_progress
-L0_3.bags=L1_3
-L0_3=Wait
-L1_3=5000
-L0_3(L1_3)
-L0_3=TriggerForAllMembers
-L1_3=L0_2
-L2_3="17mov_Garbage:UpdateBagsCounter"
-L3_3=Config
-L3_3=L3_3.Debug
-L3_3=L3_3.base_progress
-L0_3(L1_3,L2_3,L3_3)
-end
-L3_2(L4_2)
-end
-end
-L3_2=TriggerForAllMembers
-L4_2=L0_2
-L5_2="17mov_Garbage:StartJob_cl"
-L6_2=L0_2
-L3_2(L4_2,L5_2,L6_2)
-end
-else
-L3_2=Notify
-L4_2=L0_2
-L5_2=_L
-L6_2="Lobby.StartJob.MemberRequired"
-L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2=L5_2(L6_2)
-L3_2(L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2,L17_2,L18_2,L19_2,L20_2,L21_2)
-end
-else
-if nil==L1_2 then
-L3_2=table
-L3_2=L3_2.insert
-L4_2=L0_1
-L5_2={}
-L5_2.host=L0_2
-L6_2={}
-L5_2.clients=L6_2
-L5_2.bags=0
-L3_2(L4_2,L5_2)
-end
-L2_2=0
-L3_2=pairs
-L4_2=L0_1
-L3_2,L4_2,L5_2,L6_2=L3_2(L4_2)
-for L7_2,L8_2 in L3_2,L4_2,L5_2,L6_2 do
-L9_2=L8_2.host
-if L9_2==L0_2 then
-L2_2=L7_2
-break
-end
-end
-L3_2=L0_1
-L3_2=L3_2[L2_2]
-L3_2.working=true
-L3_2=Config
-L3_2=L3_2.Debug
-L3_2=L3_2.enabled
-if L3_2 then
-L3_2=Citizen
-L3_2=L3_2.CreateThread
-function L4_2()
-local L0_3,L1_3,L2_3,L3_3
-L1_3=L2_2
-L0_3=L0_1
-L0_3=L0_3[L1_3]
-L1_3=Config
-L1_3=L1_3.Debug
-L1_3=L1_3.base_progress
-L0_3.bags=L1_3
-L0_3=Wait
-L1_3=5000
-L0_3(L1_3)
-L0_3=TriggerForAllMembers
-L1_3=L0_2
-L2_3="17mov_Garbage:UpdateBagsCounter"
-L3_3=Config
-L3_3=L3_3.Debug
-L3_3=L3_3.base_progress
-L0_3(L1_3,L2_3,L3_3)
-end
-L3_2(L4_2)
-end
-L3_2=TriggerForAllMembers
-L4_2=L0_2
-L5_2="17mov_Garbage:StartJob_cl"
-L6_2=L0_2
-L3_2(L4_2,L5_2,L6_2)
-end
-end
-L13_1(L14_1,L15_1)
-L13_1=RegisterNetEvent
-L14_1="17mov_GarbageCollector:ToggleTrunk"
-function L15_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2
-L2_2=NetworkGetEntityFromNetworkId
-L3_2=A0_2
-L2_2=L2_2(L3_2)
-if L2_2 then
-L3_2=DoesEntityExist
-L4_2=L2_2
-L3_2=L3_2(L4_2)
-if L3_2 then
-L3_2=GetEntityModel
-L4_2=L2_2
-L3_2=L3_2(L4_2)
-if 1917016601==L3_2 then
-L3_2=NetworkGetEntityOwner
-L4_2=L2_2
-L3_2=L3_2(L4_2)
-if 0==L3_2 then
-if A1_2 then
-L4_2=SetVehicleDoorOpen
-L5_2=L2_2
-L6_2=5
-L7_2=false
-L8_2=false
-L4_2(L5_2,L6_2,L7_2,L8_2)
-else
-L4_2=SetVehicleDoorShut
-L5_2=L2_2
-L6_2=5
-L7_2=false
-L4_2(L5_2,L6_2,L7_2)
-end
-else
-L4_2=TriggerClientEvent
-L5_2="17mov_GarbageCollector:ToggleTrunk"
-L6_2=L3_2
-L7_2=A0_2
-L8_2=A1_2
-L4_2(L5_2,L6_2,L7_2,L8_2)
-end
-end
-end
-end
-end
-L13_1(L14_1,L15_1)
-L13_1=RegisterNetEvent
-L14_1="17mov_GarbageCollector:BagCollected"
-function L15_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2
-L2_2=1
-L3_2=#A0_2
-L4_2=1
-for L5_2=L2_2,L3_2,L4_2 do
-L6_2=TriggerClientEvent
-L7_2="17mov_GarbageCollector:BagCollected"
-L8_2=A0_2[L5_2]
-L9_2=A1_2
-L6_2(L7_2,L8_2,L9_2)
-end
-end
-L13_1(L14_1,L15_1)
-L13_1=RegisterNetEvent
-L14_1="17mov_GarbageCollector:server:BagCollected"
-function L15_1(A0_2)
-local L1_2,L2_2,L3_2
-L1_2=NetworkGetEntityFromNetworkId
-L2_2=A0_2
-L1_2=L1_2(L2_2)
-L2_2=DoesEntityExist
-L3_2=L1_2
-L2_2=L2_2(L3_2)
-if L2_2 then
-L2_2=DeleteEntity
-L3_2=L1_2
-L2_2(L3_2)
-end
-end
-L13_1(L14_1,L15_1)
-function L13_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2
-L1_2=pairs
-L2_2=L0_1
-L1_2,L2_2,L3_2,L4_2=L1_2(L2_2)
-for L5_2,L6_2 in L1_2,L2_2,L3_2,L4_2 do
-L7_2=L6_2.host
-if A0_2==L7_2 then
-L7_2=L6_2.clients
-return L7_2
-end
-end
-end
-L14_1=RegisterNetEvent
-L15_1="17mov_GarbageCollector:server:TeleportCrewMembers"
-function L16_1(A0_2,A1_2)
-local L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2
-L2_2=source
-L3_2=L13_1
-L4_2=L2_2
-L3_2=L3_2(L4_2)
-if L3_2 then
-L4_2=#L3_2
-if 0 ~=L4_2 then
-goto lbl_11
-end
-end
-do return end
-::lbl_11::
-L4_2=1
-L5_2=#L3_2
-L6_2=1
-for L7_2=L4_2,L5_2,L6_2 do
-L8_2=TriggerClientEvent
-L9_2="17mov_GarbageCollector:client:TeleportCrewMembers"
-L10_2=L3_2[L7_2]
-L11_2=A0_2
-L12_2=L7_2-1
-L13_2=A1_2
-L8_2(L9_2,L10_2,L11_2,L12_2,L13_2)
-end
-end
-L14_1(L15_1,L16_1)
-L14_1=Functions
-L14_1=L14_1.RegisterServerCallback
-L15_1="17mov_GarbageCollector:CheckAllow"
-function L16_1(A0_2,A1_2,A2_2,A3_2)
-local L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2
-if A3_2 then
-L4_2=NetworkGetEntityFromNetworkId
-L5_2=A3_2
-L4_2=L4_2(L5_2)
-L5_2=DoesEntityExist
-L6_2=L4_2
-L5_2=L5_2(L6_2)
-if L5_2 then
-L5_2=Entity
-L6_2=L4_2
-L5_2=L5_2(L6_2)
-L5_2=L5_2.state
-L5_2=L5_2.ServerRequest
-if L5_2 then
-L5_2=false
-return L5_2
-end
-L5_2=Entity
-L6_2=L4_2
-L5_2=L5_2(L6_2)
-L5_2=L5_2.state
-L6_2=L5_2
-L5_2=L5_2.set
-L7_2="ServerRequest"
-L8_2=true
-L9_2=true
-L5_2(L6_2,L7_2,L8_2,L9_2)
-L5_2=true
-return L5_2
-end
-end
-L4_2=L3_1
-L5_2={}
-L5_2.coords=A1_2
-L5_2.increaseDistance=A2_2
-L4_2[A0_2]=L5_2
-L4_2=pairs
-L5_2=L3_1
-L4_2,L5_2,L6_2,L7_2=L4_2(L5_2)
-for L8_2,L9_2 in L4_2,L5_2,L6_2,L7_2 do
-if A2_2 then
-L10_2=L9_2.increaseDistance
-if L10_2 then
-L10_2=2.0
-if L10_2 then
-goto lbl_50
-end
-end
-end
-L10_2=0.1
-::lbl_50::
-L11_2=L9_2.coords
-L11_2=L11_2-A1_2
-L11_2=#L11_2
-if L10_2>L11_2 and L8_2 ~=A0_2 then
-L11_2=L3_1
-L11_2[A0_2]=nil
-L11_2=false
-return L11_2
-end
-end
-L4_2=L2_1
-L4_2[A0_2]=true
-L4_2=true
-return L4_2
-end
-L14_1(L15_1,L16_1)
-L14_1=RegisterNetEvent
-L15_1="17mov_GarbageCollector:server:clearRequest"
-function L16_1()
-local L0_2,L1_2
-L0_2=source
-L1_2=L3_1
-L1_2[L0_2]=nil
-end
-L14_1(L15_1,L16_1)
-function L14_1()
-local L0_2,L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2
-L0_2={}
-L1_2=pairs
-L2_2=L0_1
-L1_2,L2_2,L3_2,L4_2=L1_2(L2_2)
-for L5_2,L6_2 in L1_2,L2_2,L3_2,L4_2 do
-L7_2=L6_2.working
-if L7_2 then
-L7_2=table
-L7_2=L7_2.insert
-L8_2=L0_2
-L9_2=L6_2.host
-L7_2(L8_2,L9_2)
-L7_2=1
-L8_2=L6_2.clients
-L8_2=#L8_2
-L9_2=1
-for L10_2=L7_2,L8_2,L9_2 do
-L11_2=table
-L11_2=L11_2.insert
-L12_2=L0_2
-L13_2=L6_2.clients
-L13_2=L13_2[L10_2]
-L11_2(L12_2,L13_2)
-end
-end
-end
-return L0_2
-end
-GetPlayersOnDuty=L14_1
-function L14_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2
-L1_2={}
-L2_2={}
-L3_2=0
-L4_2=pairs
-L5_2=L0_1
-L4_2,L5_2,L6_2,L7_2=L4_2(L5_2)
-for L8_2,L9_2 in L4_2,L5_2,L6_2,L7_2 do
-L10_2=L9_2.host
-if A0_2==L10_2 then
-L2_2=L9_2.clients
-L3_2=L8_2
-end
-end
-L4_2=Config
-L4_2=L4_2.UseModernUI
-if L4_2 then
-L4_2=1
-L5_2=#L2_2
-L6_2=1
-for L7_2=L4_2,L5_2,L6_2 do
-L8_2=table
-L8_2=L8_2.insert
-L9_2=L1_2
-L10_2={}
-L11_2=L2_2[L7_2]
-L10_2.id=L11_2
-L11_2=GetPlayerIdentity
-L12_2=L2_2[L7_2]
-L11_2=L11_2(L12_2)
-L10_2.name=L11_2
-L10_2.isHost=false
-L11_2=L0_1
-L11_2=L11_2[L3_2]
-L11_2=L11_2.rewardsOptions
-L12_2=L2_2[L7_2]
-L11_2=L11_2[L12_2]
-L10_2.rewardPercent=L11_2
-L8_2(L9_2,L10_2)
-end
-L4_2=#L2_2
-if 0==L4_2 then
-L4_2=table
-L4_2=L4_2.insert
-L5_2=L1_2
-L6_2={}
-L6_2.id=A0_2
-L7_2=GetPlayerIdentity
-L8_2=A0_2
-L7_2=L7_2(L8_2)
-L6_2.name=L7_2
-L6_2.isHost=true
-L7_2=L0_1
-L7_2=L7_2[L3_2]
-L7_2=L7_2.rewardsOptions
-L7_2=L7_2[A0_2]
-L6_2.rewardPercent=L7_2
-L4_2(L5_2,L6_2)
-else
-L4_2=table
-L4_2=L4_2.insert
-L5_2=L1_2
-L6_2={}
-L6_2.id=A0_2
-L7_2=GetPlayerIdentity
-L8_2=A0_2
-L7_2=L7_2(L8_2)
-L6_2.name=L7_2
-L6_2.isHost=true
-L7_2=L0_1
-L7_2=L7_2[L3_2]
-L7_2=L7_2.rewardsOptions
-L7_2=L7_2[A0_2]
-L6_2.rewardPercent=L7_2
-L4_2(L5_2,L6_2)
-end
-else
-L4_2=1
-L5_2=#L2_2
-L6_2=1
-for L7_2=L4_2,L5_2,L6_2 do
-L8_2=table
-L8_2=L8_2.insert
-L9_2=L1_2
-L10_2={}
-L11_2=L2_2[L7_2]
-L10_2.id=L11_2
-L11_2=GetPlayerIdentity
-L12_2=L2_2[L7_2]
-L11_2=L11_2(L12_2)
-L10_2.name=L11_2
-L10_2.isHost=false
-L8_2(L9_2,L10_2)
-end
-L4_2=#L2_2
-if 0==L4_2 then
-L4_2=table
-L4_2=L4_2.insert
-L5_2=L1_2
-L6_2={}
-L6_2.id=A0_2
-L7_2=GetPlayerIdentity
-L8_2=A0_2
-L7_2=L7_2(L8_2)
-L6_2.name=L7_2
-L6_2.isHost=true
-L4_2(L5_2,L6_2)
-else
-L4_2=table
-L4_2=L4_2.insert
-L5_2=L1_2
-L6_2={}
-L6_2.id=A0_2
-L7_2=GetPlayerIdentity
-L8_2=A0_2
-L7_2=L7_2(L8_2)
-L6_2.name=L7_2
-L6_2.isHost=true
-L4_2(L5_2,L6_2)
-end
-end
-return L1_2
-end
-GetAllPartyMugs=L14_1
-L14_1=RegisterNetEvent
-L15_1="17mov_GarbageCollector:server:hideBox"
-function L16_1()
-local L0_2,L1_2,L2_2,L3_2
-L0_2=source
-L1_2=TriggerForAllMembers
-L2_2=L0_2
-L3_2="17mov_GarbageCollector:client:hideBox"
-L1_2(L2_2,L3_2)
-end
-L14_1(L15_1,L16_1)
-function L14_1(A0_2,A1_2,A2_2)
-local L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2
-L3_2=L13_1
-L4_2=A0_2
-L3_2=L3_2(L4_2)
-if not L3_2 then
-L3_2={}
-end
-L4_2=1
-L5_2=#L3_2
-L5_2=L5_2+1
-L6_2=1
-for L7_2=L4_2,L5_2,L6_2 do
-L8_2=L3_2[L7_2]
-if not L8_2 then
-L8_2=A0_2
-end
-if nil ~=L8_2 then
-L9_2=type
-L10_2=L8_2
-L9_2=L9_2(L10_2)
-if "number"==L9_2 then
-if "17mov_Garbage:RefreshMugs"==A1_2 or "17mov_Garbage:StartJob_cl"==A1_2 then
-L9_2=TriggerClientEvent
-L10_2=A1_2
-L11_2=L8_2
-L12_2=A2_2
-L13_2=L8_2
-L9_2(L10_2,L11_2,L12_2,L13_2)
-else
-L9_2=TriggerClientEvent
-L10_2=A1_2
-L11_2=L8_2
-L12_2=A2_2
-L9_2(L10_2,L11_2,L12_2)
-end
-end
-end
-end
-end
-TriggerForAllMembers=L14_1
-L14_1=RegisterNetEvent
-L15_1="onResourceStop"
-function L16_1(A0_2)
-local L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2
-L1_2=GetCurrentResourceName
-L1_2=L1_2()
-if L1_2 ~=A0_2 then
-return
-end
-L1_2=GetAllVehicles
-L1_2=L1_2()
-L2_2=GetAllObjects
-L2_2=L2_2()
-L3_2=GetAllPeds
-L3_2=L3_2()
-L4_2=GetCurrentResourceName
-L4_2=L4_2()
-L5_2=1
-L6_2=math
-L6_2=L6_2.max
-L7_2=#L1_2
-L8_2=#L2_2
-L9_2=#L3_2
-L6_2=L6_2(L7_2,L8_2,L9_2)
-L7_2=1
-for L8_2=L5_2,L6_2,L7_2 do
-L9_2=L1_2[L8_2]
-if L9_2 then
-L9_2=GetEntityScript
-L10_2=L1_2[L8_2]
-L9_2,L10_2=L9_2(L10_2)
-if L9_2==L4_2 then
-L11_2=DeleteEntity
-L12_2=L1_2[L8_2]
-L11_2(L12_2)
-end
-end
-L9_2=L2_2[L8_2]
-if L9_2 then
-L9_2=GetEntityScript
-L10_2=L2_2[L8_2]
-L9_2,L10_2=L9_2(L10_2)
-L11_2=Entity
-L12_2=L2_2[L8_2]
-L11_2=L11_2(L12_2)
-L11_2=L11_2.state
-L11_2=L11_2.currentStage
-if L11_2 then
-L11_2=Entity
-L12_2=L2_2[L8_2]
-L11_2=L11_2(L12_2)
-L11_2=L11_2.state
-L12_2=L11_2
-L11_2=L11_2.set
-L13_2="currentStage"
-L14_2=nil
-L15_2=true
-L11_2(L12_2,L13_2,L14_2,L15_2)
-end
-L11_2=Entity
-L12_2=L2_2[L8_2]
-L11_2=L11_2(L12_2)
-L11_2=L11_2.state
-L11_2=L11_2.queued_bags
-if L11_2 then
-L11_2=Entity
-L12_2=L2_2[L8_2]
-L11_2=L11_2(L12_2)
-L11_2=L11_2.state
-L12_2=L11_2
-L11_2=L11_2.set
-L13_2="queued_bags"
-L14_2=nil
-L15_2=true
-L11_2(L12_2,L13_2,L14_2,L15_2)
-end
-L11_2=Entity
-L12_2=L2_2[L8_2]
-L11_2=L11_2(L12_2)
-L11_2=L11_2.state
-L11_2=L11_2.GarbageOccupied
-if L11_2 then
-L11_2=Entity
-L12_2=L2_2[L8_2]
-L11_2=L11_2(L12_2)
-L11_2=L11_2.state
-L12_2=L11_2
-L11_2=L11_2.set
-L13_2="GarbageOccupied"
-L14_2=nil
-L15_2=true
-L11_2(L12_2,L13_2,L14_2,L15_2)
-end
-L11_2=Entity
-L12_2=L2_2[L8_2]
-L11_2=L11_2(L12_2)
-L11_2=L11_2.state
-L11_2=L11_2.validPos
-if L11_2 then
-L11_2=Entity
-L12_2=L2_2[L8_2]
-L11_2=L11_2(L12_2)
-L11_2=L11_2.state
-L12_2=L11_2
-L11_2=L11_2.set
-L13_2="validPos"
-L14_2=nil
-L15_2=true
-L11_2(L12_2,L13_2,L14_2,L15_2)
-end
-if L9_2==L4_2 then
-L11_2=DeleteEntity
-L12_2=L2_2[L8_2]
-L11_2(L12_2)
-end
-end
-L9_2=L3_2[L8_2]
-if L9_2 then
-L9_2=GetEntityScript
-L10_2=L3_2[L8_2]
-L9_2,L10_2=L9_2(L10_2)
-if L9_2==L4_2 then
-L11_2=DeleteEntity
-L12_2=L3_2[L8_2]
-L11_2(L12_2)
-end
-end
-end
-end
-L14_1(L15_1,L16_1)
-L14_1=RegisterNetEvent
-L15_1="playerDropped"
-function L16_1()
-local L0_2,L1_2,L2_2,L3_2,L4_2,L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2
-L0_2=source
-L1_2=L3_1
-L1_2=L1_2[L0_2]
-if L1_2 then
-L1_2=L3_1
-L1_2[L0_2]=nil
-end
-L1_2=nil
-L2_2=false
-L3_2=pairs
-L4_2=L0_1
-L3_2,L4_2,L5_2,L6_2=L3_2(L4_2)
-for L7_2,L8_2 in L3_2,L4_2,L5_2,L6_2 do
-L9_2=L8_2.host
-if L9_2==L0_2 then
-L9_2=1
-L10_2=L8_2.clients
-L10_2=#L10_2
-L11_2=1
-for L12_2=L9_2,L10_2,L11_2 do
-L13_2=GetPlayerPing
-L14_2=L8_2.clients
-L14_2=L14_2[L12_2]
-L13_2=L13_2(L14_2)
-if 0 ~=L13_2 then
-L13_2=L8_2.clients
-L13_2=L13_2[L12_2]
-L8_2.host=L13_2
-L13_2=Notify
-L14_2=L8_2.clients
-L14_2=L14_2[L12_2]
-L15_2=_L
-L16_2="Lobby.Player.NewBoss"
-L15_2,L16_2=L15_2(L16_2)
-L13_2(L14_2,L15_2,L16_2)
-L13_2=table
-L13_2=L13_2.remove
-L14_2=L8_2.clients
-L15_2=L12_2
-L13_2(L14_2,L15_2)
-break
-end
-end
-L2_2=true
-L1_2=L7_2
-break
-end
-L9_2=1
-L10_2=L8_2.clients
-L10_2=#L10_2
-L11_2=1
-for L12_2=L9_2,L10_2,L11_2 do
-L13_2=L8_2.clients
-L13_2=L13_2[L12_2]
-if L13_2==L0_2 then
-L13_2=table
-L13_2=L13_2.remove
-L14_2=L8_2.clients
-L15_2=L12_2
-L13_2(L14_2,L15_2)
-L1_2=L7_2
-break
-end
-end
-end
-if nil==L1_2 then
-return
-end
-L3_2=L0_1
-L3_2=L3_2[L1_2]
-L3_2=L3_2.host
-L4_2=L0_1
-L4_2=L4_2[L1_2]
-L4_2=L4_2.working
-if L4_2 then
-L4_2=L0_1
-L4_2=L4_2[L1_2]
-L4_2=L4_2.clients
-L4_2=#L4_2
-if 0==L4_2 then
-L4_2=TriggerClientEvent
-L5_2="17mov_Garbage:clearMyLobby"
-L6_2=L3_2
-L4_2(L5_2,L6_2)
-else
-L4_2=TriggerForAllMembers
-L5_2=L3_2
-L6_2="17mov_Garbage:RefreshMugs"
-L7_2=GetAllPartyMugs
-L8_2=L3_2
-L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2=L7_2(L8_2)
-L4_2(L5_2,L6_2,L7_2,L8_2,L9_2,L10_2,L11_2,L12_2,L13_2,L14_2,L15_2,L16_2)
-L4_2=Config
-L4_2=L4_2.UseModernUI
-if L4_2 then
-L4_2=RecalculateRewards
-L5_2=L3_2
-L4_2(L5_2)
-end
-end
-if L2_2 then
-L4_2=tostring
-L5_2=L0_2
-L4_2=L4_2(L5_2)
-L5_2=L12_1
-L4_2=L5_2[L4_2]
-if L4_2 then
-L4_2=tostring
-L5_2=L0_2
-L4_2=L4_2(L5_2)
-L5_2=L12_1
-L5_2[L4_2]=nil
-L4_2=NetworkGetEntityFromNetworkId
-L5_2=L0_1
-L5_2=L5_2[L1_2]
-L5_2=L5_2.vehNetId
-L4_2=L4_2(L5_2)
-L5_2=DoesEntityExist
-L6_2=L4_2
-L5_2=L5_2(L6_2)
-if L5_2 then
-L5_2=DeleteEntity
-L6_2=L4_2
-L5_2(L6_2)
-end
-L5_2=TriggerClientEvent
-L6_2="17mov_GarbageCollector:client:forceEndJob"
-L7_2=L3_2
-L5_2(L6_2,L7_2)
-L5_2=TriggerForAllMembers
-L6_2=L3_2
-L7_2="17mov_GarbageCollector:client:hideBox"
-L5_2(L6_2,L7_2)
-end
-end
-else
-L4_2=L0_1
-L4_2=L4_2[L1_2]
-L4_2=L4_2.clients
-L4_2=#L4_2
-if 0==L4_2 then
-L4_2=TriggerClientEvent
-L5_2="17mov_Garbage:clearMyLobby"
-L6_2=L3_2
-L4_2(L5_2,L6_2)
-L4_2=L0_1
-L4_2[L1_2]=nil
-end
-end
-end
-L14_1(L15_1,L16_1)
+local PlayerLobbies = {}
+local PendingInvites = {}
+local ActiveBags = {}
+local BagPickupAttempts = {}
+local BagRespawnQueue = {}
+local PlayerCooldowns = {}
+local CooldownTimestamps = {}
+local MaxPartySize = 4
+
+local GetPlayerIdentifierByType = GetPlayerIdentifierByType
+local GetPlayerPing = GetPlayerPing
+local TriggerClientEvent = TriggerClientEvent
+
+function TriggerClientEventBroadcast(eventName, targets, ...)
+  local packedArgs = msgpack.pack_args(...)
+  local argsLength = #packedArgs
+  
+  if type(targets) == "table" then
+    for i = 1, #targets do
+      TriggerClientEventInternal(eventName, targets[i], packedArgs, argsLength)
+    end
+    return
+  end
+  
+  TriggerClientEventInternal(eventName, targets, packedArgs, argsLength)
+end
+
+function GetPlayerIdentifierByType(source, idType)
+  if source == nil then
+    return 0
+  end
+  
+  if GetPlayerIdentifierByType ~= nil then
+    return GetPlayerIdentifierByType(source, idType)
+  else
+    return GetPlayerIdentifier(source, 1)
+  end
+end
+
+function GetPlayerPing(source, ...)
+  if source ~= nil then
+    GetPlayerPing(source, ...)
+  end
+end
+
+function TriggerClientEvent(eventName, target, ...)
+  if target ~= nil then
+    TriggerClientEvent(eventName, target, ...)
+  end
+end
+
+function RecalculateRewards(hostSource)
+  local lobbyIndex = 0
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == hostSource then
+      lobbyIndex = k
+    end
+  end
+  
+  if not lobbyIndex then
+    return
+  end
+  
+  PlayerLobbies[lobbyIndex].rewardsOptions = {}
+  local totalMembers = #PlayerLobbies[lobbyIndex].clients + 1
+  
+  for i = 1, totalMembers - 1 do
+    local client = PlayerLobbies[lobbyIndex].clients[i]
+    if not client then
+      return
+    end
+    
+    PlayerLobbies[lobbyIndex].rewardsOptions[client] = math.floor(100 / totalMembers)
+  end
+  
+  PlayerLobbies[lobbyIndex].rewardsOptions[hostSource] = math.floor(100 / totalMembers)
+  
+  TriggerForAllMembers(hostSource, "17mov_Garbage:SetMyReward", math.floor(100 / totalMembers))
+  TriggerClientEvent("17mov_Garbage:UpdateHostPercentages", hostSource, math.floor(100 / totalMembers))
+end
+
+RegisterNetEvent("17mov_GarbageCollector:server:fixRotation", function(entityNetId)
+  local entity = NetworkGetEntityFromNetworkId(entityNetId)
+  
+  if DoesEntityExist(entity) then
+    if Entity(entity).state.validPos then
+      TriggerClientEvent("17mov_GarbageCollector:client:fixRotation", -1, entityNetId)
+    end
+  end
+end)
+
+RegisterNetEvent("17mov_GarbageCollector:server:GarbageAnim", function(targets, entityNetId, sceneId, sourcePlayer, animData, stageIndex)
+  local source = source
+  TriggerClientEventBroadcast("17mov_GarbageCollector:client:GarbageAnim", targets, entityNetId, sceneId, sourcePlayer, source, animData, stageIndex)
+end)
+
+function RestartBagsQueue(entity, addToQueue, forceRestart)
+  if not DoesEntityExist(entity) then
+    return
+  end
+  
+  local queuedBags = Entity(entity).state.queued_bags or 0
+  
+  if addToQueue then
+    queuedBags = queuedBags + 1
+    Entity(entity).state:set("queued_bags", queuedBags, true)
+  end
+  
+  if queuedBags == 1 or (forceRestart and queuedBags > 0) then
+    Citizen.SetTimeout(math.random(Config.BinsRestartingDelay.min, Config.BinsRestartingDelay.max) * 1000, function()
+      if not DoesEntityExist(entity) then
+        return
+      end
+      
+      local currentQueued = Entity(entity).state.queued_bags or 0
+      
+      if currentQueued == 0 then
+        return
+      end
+      
+      local currentStage = Entity(entity).state.currentStage
+      if currentStage then
+        Entity(entity).state:set("currentStage", math.max(currentStage - 1, 1), true)
+      end
+      
+      Entity(entity).state:set("queued_bags", math.max(currentQueued - 1, 0), true)
+      RestartBagsQueue(entity, false, true)
+    end)
+  end
+end
+
+RegisterNetEvent("17mov_GarbageCollector:server:GarbageSetOcupied", function(entityNetId, maxStages, validPosition, skipStageIncrement)
+  local entity = NetworkGetEntityFromNetworkId(entityNetId)
+  
+  if DoesEntityExist(entity) then
+    if maxStages then
+      local currentStage = Entity(entity).state.currentStage or 1
+      currentStage = math.min((skipStageIncrement and 0 or 1) + currentStage, maxStages)
+      Entity(entity).state:set("currentStage", currentStage, true)
+      RestartBagsQueue(entity, true, false)
+      Entity(entity).state:set("GarbageOccupied", nil, true)
+    else
+      Entity(entity).state:set("GarbageOccupied", true, true)
+    end
+    
+    if validPosition then
+      if Config.FixBinsPosition then
+        Entity(entity).state:set("validPos", json.encode(validPosition), true)
+      end
+    end
+  end
+end)
+
+RegisterNetEvent("17mov_GarbageCollector:server:BlockBags", function(bagNetIds)
+  for i = 1, #bagNetIds do
+    local entity = NetworkGetEntityFromNetworkId(bagNetIds[i])
+    if DoesEntityExist(entity) then
+      Entity(entity).state:set("GarbageBlock", true, true)
+    end
+  end
+end)
+
+Functions.RegisterServerCallback("17mov_GarbageCollector:server:GarbageGetOcupied", function(source, entityNetId)
+  local entity = NetworkGetEntityFromNetworkId(entityNetId)
+  
+  if not DoesEntityExist(entity) then
+    return false
+  end
+  
+  if Entity(entity).state.GarbageOccupied then
+    return true
+  end
+  
+  Entity(entity).state:set("GarbageOccupied", true, true)
+  return false
+end)
+
+Functions.RegisterServerCallback("17mov_Garbage:GetPlayersNames", function(source, playerIds)
+  local playerNames = {}
+  
+  for i = 1, #playerIds do
+    table.insert(playerNames, {
+      id = playerIds[i],
+      name = GetPlayerIdentity(playerIds[i])
+    })
+  end
+  
+  return playerNames
+end)
+
+Functions.RegisterServerCallback("17mov_Garbage:CheckThisReward", function(source, rewardPercent, targetPlayerId)
+  local lobbyIndex = 0
+  local otherRewardsTotal = 0
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if source == lobby.host then
+      lobbyIndex = k
+      break
+    end
+    
+    for i = 1, #lobby.clients do
+      if source == lobby.clients[i] then
+        lobbyIndex = k
+        break
+      end
+    end
+  end
+  
+  for playerId, percent in pairs(PlayerLobbies[lobbyIndex].rewardsOptions) do
+    if playerId ~= targetPlayerId then
+      otherRewardsTotal = otherRewardsTotal + percent
+    end
+  end
+  
+  if otherRewardsTotal + rewardPercent > 100 then
+    return false
+  else
+    PlayerLobbies[lobbyIndex].rewardsOptions[targetPlayerId] = rewardPercent
+    TriggerClientEvent("17mov_Garbage:SetMyReward", targetPlayerId, rewardPercent)
+    return true
+  end
+end)
+
+Functions.RegisterServerCallback("17mov_Garbage:IfPlayerOwnsTeam", function(source)
+  local ownsTeam = false
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      ownsTeam = true
+      break
+    end
+  end
+  
+  return ownsTeam
+end)
+
+Functions.RegisterServerCallback("17mov_Garbage:IfPlayerIsHost", function(source)
+  local isHost = true
+  local memberLobbyIndex = 0
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    for i = 1, #lobby.clients do
+      if lobby.clients[i] == source then
+        isHost = false
+        memberLobbyIndex = k
+        break
+      end
+    end
+  end
+  
+  if not isHost then
+    if PlayerLobbies[memberLobbyIndex].host ~= nil and GetPlayerPing(PlayerLobbies[memberLobbyIndex].host) ~= 0 then
+      -- Host is still connected
+    else
+      isHost = true
+      PlayerLobbies[memberLobbyIndex].host = source
+    end
+  end
+  
+  return isHost
+end)
+
+Functions.RegisterServerCallback("17mov_Garbage:init", function(source)
+  return {
+    name = GetPlayerIdentity(source),
+    source = source
+  }
+end)
+
+Functions.RegisterServerCallback("17mov_Garbage:GetLobbyMembers", function(source, hostId)
+  if hostId == nil then
+    return {}
+  end
+  
+  local members = {hostId}
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == hostId then
+      for i = 1, #lobby.clients do
+        table.insert(members, lobby.clients[i])
+      end
+    end
+  end
+  
+  return members
+end)
+
+RegisterNetEvent("17mov_Garbage:SendRequestToClient_sv", function(targetPlayerId)
+  local source = source
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == targetPlayerId then
+      return Notify(source, _L("Lobby.Player.AlreadyHost"))
+    else
+      for i = 1, #lobby.clients do
+        if lobby.clients[i] == targetPlayerId then
+          return Notify(source, _L("Lobby.Player.AlreadyInTeam"))
+        end
+      end
+    end
+  end
+  
+  for k, invite in pairs(PendingInvites) do
+    if invite.client == targetPlayerId then
+      return Notify(source, _L("Lobby.Player.AlreadyGotInvite"))
+    else
+      if invite.host == source and invite.client ~= nil then
+        return Notify(source, _L("Lobby.Player.AlreadyInvited"))
+      end
+    end
+  end
+  
+  local clientMembers = {}
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      clientMembers = lobby.clients
+    end
+  end
+  
+  if #clientMembers + 1 >= MaxPartySize then
+    return Notify(source, _L("Lobby.StartJob.PartyFull"))
+  end
+  
+  table.insert(PendingInvites, {host = source, client = targetPlayerId})
+  
+  Notify(source, _L("Lobby.StartJob.InviteSent"))
+  TriggerClientEvent("17mov_Garbage:SendRequestToClient_cl", targetPlayerId, GetPlayerIdentity(source))
+end)
+
+RegisterNetEvent("17mov_Garbage:UpdateServerPartyBagsCounter", function(bagModel)
+  local source = source
+  
+  if ActiveBags[source] == nil then
+    return
+  end
+  
+  if BagRespawnQueue[source] ~= nil then
+    if os.time() - BagRespawnQueue[source] < 2 then
+      return
+    end
+  end
+  
+  local bagValue = Config.BagAttachments[bagModel].counterValue or 1
+  
+  if bagValue == nil then
+    bagValue = 1
+  end
+  
+  if bagValue >= 100 then
+    return
+  end
+  
+  BagRespawnQueue[source] = os.time()
+  
+  if bagValue == nil then
+    bagValue = 1
+  end
+  
+  local lobbyIndex = 0
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      lobbyIndex = k
+      break
+    else
+      for i = 1, #lobby.clients do
+        if source == lobby.clients[i] then
+          lobbyIndex = k
+          break
+        end
+      end
+    end
+  end
+  
+  local vehicle = NetworkGetEntityFromNetworkId(PlayerLobbies[lobbyIndex].vehNetId)
+  local playerPos = GetEntityCoords(GetPlayerPed(source))
+  local vehiclePos = GetEntityCoords(vehicle)
+  
+  if #(vehiclePos - playerPos) > 10.0 then
+    return
+  end
+  
+  ActiveBags[source] = nil
+  
+  local hostSource = nil
+  local foundLobby = false
+  local currentBags = 0
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      foundLobby = true
+      hostSource = lobby.host
+    else
+      for i = 1, #lobby.clients do
+        if source == lobby.clients[i] then
+          foundLobby = true
+          hostSource = lobby.host
+        end
+      end
+    end
+    
+    if foundLobby then
+      if lobby.bags ~= nil and lobby.bags < 100 then
+        lobby.bags = lobby.bags + bagValue
+      end
+      currentBags = lobby.bags
+      break
+    end
+  end
+  
+  TriggerForAllMembers(hostSource, "17mov_Garbage:UpdateBagsCounter", currentBags)
+end)
+
+RegisterNetEvent("17mov_Garbage:ClientReactRequest", function(accepted)
+  local source = source
+  local hostSource = nil
+  local inviteFound = false
+  
+  for k, invite in pairs(PendingInvites) do
+    if invite.client == source then
+      hostSource = invite.host
+      PendingInvites[k] = nil
+      break
+    end
+  end
+  
+  if accepted then
+    if hostSource ~= nil and source ~= nil then
+      for k, lobby in pairs(PlayerLobbies) do
+        if lobby.host == hostSource then
+          if lobby.clients ~= nil then
+            table.insert(lobby.clients, source)
+            inviteFound = true
+          end
+        end
+      end
+      
+      if not inviteFound then
+        table.insert(PlayerLobbies, {
+          host = hostSource,
+          clients = {source},
+          bags = 0
+        })
+      end
+      
+      if Config.UseModernUI then
+        RecalculateRewards(hostSource)
+      end
+      
+      Notify(hostSource, _L("Lobby.Player.Accepted"))
+      
+      local partyMembers = GetAllPartyMugs(hostSource)
+      TriggerForAllMembers(hostSource, "17mov_Garbage:RefreshMugs", partyMembers)
+    else
+      Notify(source, _L("Lobby.Player.InviteError"))
+      Notify(hostSource, _L("Lobby.Player.InviteError"))
+    end
+  else
+    Notify(hostSource, _L("Lobby.Player.Declined"))
+  end
+end)
+
+RegisterNetEvent("17mov_Garbage:KickPlayerFromLobby", function(kickedPlayerId, notifyKicked, callerSource)
+  local source = source
+  local targetPlayerId = kickedPlayerId
+  
+  if callerSource == nil then
+    for k, lobby in pairs(PlayerLobbies) do
+      for i = 1, #lobby.clients do
+        if lobby.host == source and lobby.clients[i] == targetPlayerId then
+          lobby.clients[i] = nil
+          break
+        end
+      end
+    end
+  else
+    for k, lobby in pairs(PlayerLobbies) do
+      for i = 1, #lobby.clients do
+        if lobby.clients[i] == callerSource then
+          source = lobby.host
+          lobby.clients[i] = nil
+          break
+        end
+      end
+    end
+  end
+  
+  if notifyKicked then
+    Notify(targetPlayerId, _L("Lobby.Player.Kicked"))
+  end
+  
+  if Config.UseModernUI then
+    local soloMugs = {{
+      id = targetPlayerId,
+      name = GetPlayerIdentity(targetPlayerId),
+      isHost = true
+    }}
+    
+    TriggerClientEvent("17mov_Garbage:RefreshMugs", targetPlayerId, soloMugs, targetPlayerId)
+    TriggerClientEvent("17mov_Garbage:clearMyLobby", targetPlayerId)
+    TriggerClientEvent("17mov_Garbage:SetMyReward", targetPlayerId, 100)
+    
+    local partyMembers = GetAllPartyMugs(source)
+    TriggerForAllMembers(source, "17mov_Garbage:RefreshMugs", partyMembers)
+    RecalculateRewards(source)
+    
+    for k, lobby in pairs(PlayerLobbies) do
+      if #lobby.clients == 0 and lobby.host == source then
+        PlayerLobbies[k] = nil
+        TriggerClientEvent("17mov_Garbage:clearMyLobby", source)
+      end
+    end
+  else
+    local soloMugs = {{
+      id = targetPlayerId,
+      name = GetPlayerIdentity(targetPlayerId),
+      isHost = true
+    }}
+    
+    TriggerClientEvent("17mov_Garbage:RefreshMugs", targetPlayerId, soloMugs, targetPlayerId)
+    
+    local partyMembers = GetAllPartyMugs(source)
+    TriggerForAllMembers(source, "17mov_Garbage:RefreshMugs", partyMembers)
+    
+    for k, lobby in pairs(PlayerLobbies) do
+      if #lobby.clients == 0 and lobby.host == source then
+        PlayerLobbies[k] = nil
+      end
+    end
+  end
+end)
+
+RegisterNetEvent("17mov_GarbageJob:SendVehicleNetId", function(vehicleNetId)
+  local source = source
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      lobby.vehNetId = vehicleNetId
+    end
+  end
+end)
+
+local UnloadStageComplete = {}
+
+RegisterNetEvent("17mov_Garbage:server:endStage", function()
+  local source = source
+  UnloadStageComplete[tostring(source)] = true
+  TriggerForAllMembers(source, "17mov_Garbage:client:endStage", source)
+end)
+
+RegisterNetEvent("17mov_GarbageCollector:server:startUnloadAnim", function(bagsToUnload, nearbyPlayers)
+  local source = source
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      TriggerClientEvent("17mov_GarbageCollector:client:startUnloadAnim", source, bagsToUnload, true)
+      return TriggerClientEventBroadcast("17mov_GarbageCollector:client:startUnloadAnim", nearbyPlayers, bagsToUnload, false)
+    end
+  end
+end)
+
+RegisterNetEvent("17mov_Garbage:endJob_sv", function(hasVehicle, skipPenalty)
+  local source = source
+  local collectedBags = nil
+  
+  TriggerForAllMembers(source, "17mov_Garbage:endJob_cl", 0)
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      lobby.working = false
+      collectedBags = lobby.bags
+      lobby.bags = 0
+      
+      local allMembers = {}
+      for i = 1, #lobby.clients do
+        table.insert(allMembers, lobby.clients[i])
+      end
+      table.insert(allMembers, lobby.host)
+      
+      Citizen.CreateThread(function()
+        local vehicle = NetworkGetEntityFromNetworkId(lobby.vehNetId)
+        
+        if DoesEntityExist(vehicle) then
+          if hasVehicle or (hasVehicle and Config.DeleteVehicleWithPenalty) then
+            if skipPenalty or hasVehicle then
+              -- Skip vehicle handling
+            else
+              vehicle = GetVehiclePedIsIn(GetPlayerPed(source), false)
+              
+              for i = 1, #allMembers do
+                TaskLeaveVehicle(GetPlayerPed(allMembers[i]), vehicle, 0)
+              end
+              
+              Wait(1750)
+              DeleteEntity(vehicle)
+            end
+          end
+        end
+      end)
+      
+      local totalReward = collectedBags * Config.Price
+      
+      if Config.MultiplyRewardWhileWorkingInGroup then
+        totalReward = math.floor(totalReward * (#lobby.clients + 1))
+      end
+      
+      if Config.UseModernUI and #lobby.clients == 0 then
+        RecalculateRewards(source)
+      end
+      
+      local paidPlayers = {}
+      for i = 1, #allMembers do
+        local playerReward = 0
+        
+        if Config.UseModernUI and Config.LetBossSplitReward then
+          playerReward = math.floor(totalReward * (lobby.rewardsOptions[allMembers[i]] / 100))
+        elseif not Config.UseModernUI and Config.SplitReward then
+          playerReward = math.floor(totalReward / (#lobby.clients + 1))
+        else
+          playerReward = totalReward
+        end
+        
+        if not hasVehicle then
+          PayPenalty(allMembers[i], Config.PenaltyAmount)
+          Notify(allMembers[i], _L("Job.Gameplay.RewardPenalty", Config.PenaltyAmount))
+        end
+        
+        if hasVehicle or (not hasVehicle and Config.DontPayRewardWithoutVehicle == false) then
+          if not paidPlayers[allMembers[i]] then
+            paidPlayers[allMembers[i]] = true
+            Pay(allMembers[i], playerReward, #allMembers, collectedBags)
+            Notify(allMembers[i], _L("Job.Gameplay.Reward", playerReward))
+          end
+        end
+      end
+      
+      if #lobby.clients == 0 then
+        PlayerLobbies[k] = nil
+        TriggerClientEvent("17mov_Garbage:clearMyLobby", source)
+      end
+    end
+  end
+  
+  if UnloadStageComplete[tostring(source)] then
+    UnloadStageComplete[tostring(source)] = nil
+  end
+end)
+
+RegisterNetEvent("17mov_Garbage:StartJob_sv", function()
+  local source = source
+  local lobbyMembers = nil
+  local lobbyIndex = nil
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      lobbyMembers = lobby.clients
+      lobbyIndex = k
+      break
+    end
+  end
+  
+  if Config.RequireJobAlsoForFriends and Config.RequiredJob ~= "none" and lobbyMembers ~= nil then
+    for i = 1, #lobbyMembers do
+      if GetPlayerJob(lobbyMembers[i]) ~= Config.RequiredJob then
+        return Notify(source, _L("Lobby.StartJob.NoRequiredJob"))
+      end
+    end
+  end
+  
+  if not IsHaveRequiredItem(source) then
+    return Notify(source, _L("Lobby.StartJob.NoItem"))
+  end
+  
+  if Config.RequireItemFromWholeTeam and lobbyMembers ~= nil then
+    for i = 1, #lobbyMembers do
+      if not IsHaveRequiredItem(lobbyMembers[i]) then
+        return Notify(source, _L("Lobby.StartJob.NoItem"))
+      end
+    end
+  end
+  
+  if Config.JobCooldown > 0 then
+    CooldownsTime = CooldownsTime or {}
+    
+    local currentTime = os.time()
+    local playerLicense = GetPlayerIdentifierByType(source, "license")
+    
+    if PlayerCooldowns[playerLicense] then
+      local elapsedTime = currentTime - CooldownsTime[playerLicense]
+      
+      if elapsedTime >= Config.JobCooldown then
+        PlayerCooldowns[playerLicense] = nil
+        CooldownsTime[playerLicense] = nil
+      else
+        local remainingTime = Config.JobCooldown - elapsedTime
+        local hours = math.floor(remainingTime / 3600)
+        local minutes = math.floor((remainingTime % 3600) / 60)
+        local seconds = remainingTime % 60
+        
+        local timeString = ""
+        if hours > 0 then
+          timeString = timeString .. hours .. _L("Job.Time.Hours") .. " "
+        end
+        if minutes > 0 then
+          timeString = timeString .. minutes .. _L("Job.Time.Minutes") .. " "
+        end
+        timeString = timeString .. seconds .. _L("Job.Time.Seconds")
+        
+        return Notify(source, _L("Lobby.StartJob.Cooldown", GetPlayerIdentity(source), timeString))
+      end
+    end
+    
+    if lobbyMembers ~= nil then
+      for i = 1, #lobbyMembers do
+        local memberLicense = GetPlayerIdentifierByType(lobbyMembers[i], "license")
+        
+        if PlayerCooldowns[memberLicense] then
+          local elapsedTime = currentTime - CooldownsTime[memberLicense]
+          
+          if elapsedTime >= Config.JobCooldown then
+            PlayerCooldowns[memberLicense] = nil
+            CooldownsTime[memberLicense] = nil
+          else
+            local remainingTime = Config.JobCooldown - elapsedTime
+            local hours = math.floor(remainingTime / 3600)
+            local minutes = math.floor((remainingTime % 3600) / 60)
+            local seconds = remainingTime % 60
+            
+            local timeString = ""
+            if hours > 0 then
+              timeString = timeString .. hours .. _L("Job.Time.Hours") .. " "
+            end
+            if minutes > 0 then
+              timeString = timeString .. minutes .. _L("Job.Time.Minutes") .. " "
+            end
+            timeString = timeString .. seconds .. _L("Job.Time.Seconds")
+            
+            return Notify(source, _L("Lobby.StartJob.Cooldown", GetPlayerIdentity(lobbyMembers[i]), timeString))
+          end
+        end
+      end
+    end
+    
+    PlayerCooldowns[playerLicense] = true
+    CooldownsTime[playerLicense] = currentTime
+    
+    if lobbyMembers ~= nil then
+      for i = 1, #lobbyMembers do
+        local memberLicense = GetPlayerIdentifierByType(lobbyMembers[i], "license")
+        PlayerCooldowns[memberLicense] = true
+        CooldownsTime[memberLicense] = currentTime
+      end
+    end
+  end
+  
+  if Config.RequireOneFriendMinimum then
+    if lobbyMembers ~= nil and #lobbyMembers > 0 then
+      if lobbyIndex ~= nil then
+        PlayerLobbies[lobbyIndex].working = true
+        
+        if Config.Debug.enabled then
+          Citizen.CreateThread(function()
+            PlayerLobbies[lobbyIndex].bags = Config.Debug.base_progress
+            Wait(5000)
+            TriggerForAllMembers(source, "17mov_Garbage:UpdateBagsCounter", Config.Debug.base_progress)
+          end)
+        end
+      end
+      
+      TriggerForAllMembers(source, "17mov_Garbage:StartJob_cl", source)
+    else
+      Notify(source, _L("Lobby.StartJob.MemberRequired"))
+    end
+  else
+    if lobbyMembers == nil then
+      table.insert(PlayerLobbies, {
+        host = source,
+        clients = {},
+        bags = 0
+      })
+    end
+    
+    lobbyIndex = 0
+    for k, lobby in pairs(PlayerLobbies) do
+      if lobby.host == source then
+        lobbyIndex = k
+        break
+      end
+    end
+    
+    PlayerLobbies[lobbyIndex].working = true
+    
+    if Config.Debug.enabled then
+      Citizen.CreateThread(function()
+        PlayerLobbies[lobbyIndex].bags = Config.Debug.base_progress
+        Wait(5000)
+        TriggerForAllMembers(source, "17mov_Garbage:UpdateBagsCounter", Config.Debug.base_progress)
+      end)
+    end
+    
+    TriggerForAllMembers(source, "17mov_Garbage:StartJob_cl", source)
+  end
+end)
+
+RegisterNetEvent("17mov_GarbageCollector:ToggleTrunk", function(vehicleNetId, openTrunk)
+  local vehicle = NetworkGetEntityFromNetworkId(vehicleNetId)
+  
+  if vehicle and DoesEntityExist(vehicle) then
+    if GetEntityModel(vehicle) == 1917016601 then -- trash model hash
+      local vehicleOwner = NetworkGetEntityOwner(vehicle)
+      
+      if vehicleOwner == 0 then
+        if openTrunk then
+          SetVehicleDoorOpen(vehicle, 5, false, false)
+        else
+          SetVehicleDoorShut(vehicle, 5, false)
+        end
+      else
+        TriggerClientEvent("17mov_GarbageCollector:ToggleTrunk", vehicleOwner, vehicleNetId, openTrunk)
+      end
+    end
+  end
+end)
+
+RegisterNetEvent("17mov_GarbageCollector:BagCollected", function(nearbyPlayers, bagData)
+  for i = 1, #nearbyPlayers do
+    TriggerClientEvent("17mov_GarbageCollector:BagCollected", nearbyPlayers[i], bagData)
+  end
+end)
+
+RegisterNetEvent("17mov_GarbageCollector:server:BagCollected", function(bagNetId)
+  local entity =NetworkGetEntityFromNetworkId(bagNetId)
+  
+  if DoesEntityExist(entity) then
+    DeleteEntity(entity)
+  end
+end)
+
+function GetLobbyClients(hostSource)
+  for k, lobby in pairs(PlayerLobbies) do
+    if hostSource == lobby.host then
+      return lobby.clients
+    end
+  end
+end
+
+RegisterNetEvent("17mov_GarbageCollector:server:TeleportCrewMembers", function(vehicleNetId, memberOffset, networkTime)
+  local source = source
+  local crewMembers = GetLobbyClients(source)
+  
+  if not crewMembers or #crewMembers == 0 then
+    return
+  end
+  
+  for i = 1, #crewMembers do
+    TriggerClientEvent("17mov_GarbageCollector:client:TeleportCrewMembers", crewMembers[i], vehicleNetId, i - 1, networkTime)
+  end
+end)
+
+Functions.RegisterServerCallback("17mov_GarbageCollector:CheckAllow", function(source, coords, increaseDistance, entityNetId)
+  if entityNetId then
+    local entity = NetworkGetEntityFromNetworkId(entityNetId)
+    
+    if DoesEntityExist(entity) then
+      if Entity(entity).state.ServerRequest then
+        return false
+      end
+      
+      Entity(entity).state:set("ServerRequest", true, true)
+      return true
+    end
+  end
+  
+  BagPickupAttempts[source] = {coords = coords, increaseDistance = increaseDistance}
+  
+  for playerId, attemptData in pairs(BagPickupAttempts) do
+    local distance = increaseDistance and 2.0 or 0.1
+    
+    if #(attemptData.coords - coords) < distance and playerId ~= source then
+      BagPickupAttempts[source] = nil
+      return false
+    end
+  end
+  
+  ActiveBags[source] = true
+  return true
+end)
+
+RegisterNetEvent("17mov_GarbageCollector:server:clearRequest", function()
+  local source = source
+  BagPickupAttempts[source] = nil
+end)
+
+function GetPlayersOnDuty()
+  local onDutyPlayers = {}
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.working then
+      table.insert(onDutyPlayers, lobby.host)
+      
+      for i = 1, #lobby.clients do
+        table.insert(onDutyPlayers, lobby.clients[i])
+      end
+    end
+  end
+  
+  return onDutyPlayers
+end
+
+function GetAllPartyMugs(hostSource)
+  local partyMembers = {}
+  local lobbyClients = {}
+  local lobbyIndex = 0
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == hostSource then
+      lobbyClients = lobby.clients
+      lobbyIndex = k
+    end
+  end
+  
+  if Config.UseModernUI then
+    for i = 1, #lobbyClients do
+      table.insert(partyMembers, {
+        id = lobbyClients[i],
+        name = GetPlayerIdentity(lobbyClients[i]),
+        isHost = false,
+        rewardPercent = PlayerLobbies[lobbyIndex].rewardsOptions[lobbyClients[i]]
+      })
+    end
+    
+    if #lobbyClients == 0 then
+      table.insert(partyMembers, {
+        id = hostSource,
+        name = GetPlayerIdentity(hostSource),
+        isHost = true,
+        rewardPercent = PlayerLobbies[lobbyIndex].rewardsOptions[hostSource]
+      })
+    else
+      table.insert(partyMembers, {
+        id = hostSource,
+        name = GetPlayerIdentity(hostSource),
+        isHost = true,
+        rewardPercent = PlayerLobbies[lobbyIndex].rewardsOptions[hostSource]
+      })
+    end
+  else
+    for i = 1, #lobbyClients do
+      table.insert(partyMembers, {
+        id = lobbyClients[i],
+        name = GetPlayerIdentity(lobbyClients[i]),
+        isHost = false
+      })
+    end
+    
+    if #lobbyClients == 0 then
+      table.insert(partyMembers, {
+        id = hostSource,
+        name = GetPlayerIdentity(hostSource),
+        isHost = true
+      })
+    else
+      table.insert(partyMembers, {
+        id = hostSource,
+        name = GetPlayerIdentity(hostSource),
+        isHost = true
+      })
+    end
+  end
+  
+  return partyMembers
+end
+
+RegisterNetEvent("17mov_GarbageCollector:server:hideBox", function()
+  local source = source
+  TriggerForAllMembers(source, "17mov_GarbageCollector:client:hideBox")
+end)
+
+function TriggerForAllMembers(hostSource, eventName, ...)
+  local crewMembers = GetLobbyClients(hostSource) or {}
+  
+  for i = 1, #crewMembers + 1 do
+    local targetPlayer = crewMembers[i] or hostSource
+    
+    if targetPlayer ~= nil and type(targetPlayer) == "number" then
+      if eventName == "17mov_Garbage:RefreshMugs" or eventName == "17mov_Garbage:StartJob_cl" then
+        TriggerClientEvent(eventName, targetPlayer, ..., targetPlayer)
+      else
+        TriggerClientEvent(eventName, targetPlayer, ...)
+      end
+    end
+  end
+end
+
+RegisterNetEvent("onResourceStop", function(resourceName)
+  if GetCurrentResourceName() ~= resourceName then
+    return
+  end
+  
+  local allVehicles = GetAllVehicles()
+  local allObjects = GetAllObjects()
+  local allPeds = GetAllPeds()
+  local currentResource = GetCurrentResourceName()
+  
+  for i = 1, math.max(#allVehicles, #allObjects, #allPeds) do
+    if allVehicles[i] then
+      local entityResource, _ = GetEntityScript(allVehicles[i])
+      if entityResource == currentResource then
+        DeleteEntity(allVehicles[i])
+      end
+    end
+    
+    if allObjects[i] then
+      local entityResource, _ = GetEntityScript(allObjects[i])
+      
+      if Entity(allObjects[i]).state.currentStage then
+        Entity(allObjects[i]).state:set("currentStage", nil, true)
+      end
+      
+      if Entity(allObjects[i]).state.queued_bags then
+        Entity(allObjects[i]).state:set("queued_bags", nil, true)
+      end
+      
+      if Entity(allObjects[i]).state.GarbageOccupied then
+        Entity(allObjects[i]).state:set("GarbageOccupied", nil, true)
+      end
+      
+      if Entity(allObjects[i]).state.validPos then
+        Entity(allObjects[i]).state:set("validPos", nil, true)
+      end
+      
+      if entityResource == currentResource then
+        DeleteEntity(allObjects[i])
+      end
+    end
+    
+    if allPeds[i] then
+      local entityResource, _ = GetEntityScript(allPeds[i])
+      if entityResource == currentResource then
+        DeleteEntity(allPeds[i])
+      end
+    end
+  end
+end)
+
+RegisterNetEvent("playerDropped", function()
+  local source = source
+  
+  if BagPickupAttempts[source] then
+    BagPickupAttempts[source] = nil
+  end
+  
+  local memberLobbyIndex = nil
+  local wasHost = false
+  
+  for k, lobby in pairs(PlayerLobbies) do
+    if lobby.host == source then
+      for i = 1, #lobby.clients do
+        if GetPlayerPing(lobby.clients[i]) ~= 0 then
+          lobby.host = lobby.clients[i]
+          Notify(lobby.clients[i], _L("Lobby.Player.NewBoss"))
+          table.remove(lobby.clients, i)
+          break
+        end
+      end
+      
+      wasHost = true
+      memberLobbyIndex = k
+      break
+    end
+    
+    for i = 1, #lobby.clients do
+      if lobby.clients[i] == source then
+        table.remove(lobby.clients, i)
+        memberLobbyIndex = k
+        break
+      end
+    end
+  end
+  
+  if memberLobbyIndex == nil then
+    return
+  end
+  
+  local hostSource = PlayerLobbies[memberLobbyIndex].host
+  
+  if PlayerLobbies[memberLobbyIndex].working then
+    if #PlayerLobbies[memberLobbyIndex].clients == 0 then
+      TriggerClientEvent("17mov_Garbage:clearMyLobby", hostSource)
+    else
+      TriggerForAllMembers(hostSource, "17mov_Garbage:RefreshMugs", GetAllPartyMugs(hostSource))
+      
+      if Config.UseModernUI then
+        RecalculateRewards(hostSource)
+      end
+    end
+    
+    if wasHost and UnloadStageComplete[tostring(source)] then
+      UnloadStageComplete[tostring(source)] = nil
+      
+      local vehicle = NetworkGetEntityFromNetworkId(PlayerLobbies[memberLobbyIndex].vehNetId)
+      if DoesEntityExist(vehicle) then
+        DeleteEntity(vehicle)
+      end
+      
+      TriggerClientEvent("17mov_GarbageCollector:client:forceEndJob", hostSource)
+      TriggerForAllMembers(hostSource, "17mov_GarbageCollector:client:hideBox")
+    end
+  else
+    if #PlayerLobbies[memberLobbyIndex].clients == 0 then
+      TriggerClientEvent("17mov_Garbage:clearMyLobby", hostSource)
+      PlayerLobbies[memberLobbyIndex] = nil
+    end
+  end
+end)
